@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Burning Money on Facebook Ads | Data-Driven Agency</title>
+    <style>
+    
+    /* Add this at the very top of your <style> section */
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+
+/* Then update your body font-family */
+body {
+    font-family: 'Hind Siliguri', 'Noto Sans Bengali', 'SolaimanLipi', sans-serif;
+    /* rest of your styles */
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Animated Background */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .glow-orb {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .glow-orb-1 {
+            background: #fff;
+            top: -200px;
+            right: -200px;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .glow-orb-2 {
+            background: #fff;
+            bottom: -200px;
+            left: -200px;
+            animation: float 25s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(100px, 100px); }
+        }
+
+        section {
+            position: relative;
+            z-index: 1;
+            padding: 100px 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 150px 0;
+        }
+
+        .eyebrow {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .main-headline {
+            font-size: 72px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #fff 0%, #888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .deck-copy {
+            font-size: 24px;
+            color: #aaa;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            line-height: 1.5;
+        }
+
+        .highlight {
+            color: #fff;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #fff;
+        }
+
+        /* CTA Buttons */
+        .cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: #fff;
+            color: #000;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255,255,255,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .btn-secondary:hover {
+            background: #fff;
+            color: #000;
+            transform: translateY(-2px);
+        }
+
+        /* Shocking Statement Section */
+        .shocking-statement {
+            background: linear-gradient(135deg, #111 0%, #000 100%);
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+            padding: 80px 0;
+        }
+
+        .shocking-box {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 60px 40px;
+            border: 1px solid #333;
+            background: rgba(255,255,255,0.02);
+            position: relative;
+        }
+
+        .shocking-box::before {
+            content: '⚠';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 50px;
+            background: #000;
+            padding: 0 20px;
+        }
+
+        .shocking-headline {
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .shocking-subtext {
+            font-size: 18px;
+            color: #888;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            background: #000;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: #fff;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .problem-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            border: 1px solid #222;
+            padding: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .problem-card:hover {
+            border-color: #fff;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(255,255,255,0.1);
+        }
+
+        .problem-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .problem-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .problem-text {
+            color: #aaa;
+            line-height: 1.7;
+        }
+
+        /* Agitation Section */
+        .agitation-section {
+            background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
+            border-top: 1px solid #222;
+        }
+
+        .consequence-list {
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
+        .consequence-item {
+            background: rgba(255,255,255,0.03);
+            border-left: 4px solid #444;
+            padding: 30px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .consequence-item:hover {
+            border-left-color: #fff;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .consequence-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .consequence-text {
+            color: #888;
+            font-size: 16px;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            background: #000;
+            position: relative;
+        }
+
+        .solution-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .solution-headline {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .solution-description {
+            font-size: 20px;
+            color: #aaa;
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        .solution-pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .pillar {
+            background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%);
+            border: 1px solid #333;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .pillar:hover {
+            border-color: #fff;
+            transform: scale(1.05);
+        }
+
+        .pillar-number {
+            font-size: 60px;
+            font-weight: 800;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        .pillar-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .pillar-text {
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* Features Section */
+        .features-section {
+            background: linear-gradient(180deg, #0a0a0a 0%, #000 100%);
+        }
+
+        .features-list {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid #1a1a1a;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: #333;
+        }
+
+        .feature-bullet {
+            font-size: 24px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .feature-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .feature-content p {
+            color: #888;
+            line-height: 1.7;
+        }
+
+        /* Credibility Section */
+        .credibility-section {
+            background: #000;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+
+        .credibility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 50px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .stat-item {
+            padding: 30px;
+        }
+
+        .stat-number {
+            font-size: 56px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .why-us-list {
+            max-width: 800px;
+            margin: 60px auto 0;
+        }
+
+        .why-item {
+            display: flex;
+            align-items: center;
+            padding: 25px;
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.03);
+            border-left: 3px solid #fff;
+        }
+
+        .why-icon {
+            font-size: 30px;
+            margin-right: 20px;
+        }
+
+        .why-text {
+            font-size: 18px;
+            color: #ccc;
+        }
+
+        /* Proof Section */
+        .proof-section {
+            background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .result-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid #222;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .result-card:hover {
+            border-color: #fff;
+            transform: translateY(-5px);
+        }
+
+        .result-metric {
+            font-size: 48px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .result-description {
+            color: #888;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .result-client {
+            font-size: 14px;
+            color: #555;
+            font-style: italic;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            background: #000;
+            padding: 120px 0;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .pricing-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            border: 2px solid #222;
+            padding: 50px 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: #fff;
+            transform: scale(1.05);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+            color: #000;
+            padding: 5px 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .pricing-card:hover {
+            border-color: #fff;
+            transform: translateY(-10px);
+        }
+
+        .pricing-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .pricing-price {
+            font-size: 48px;
+            font-weight: 800;
+            margin: 20px 0;
+        }
+
+        .pricing-period {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 15px 0;
+            border-bottom: 1px solid #222;
+            color: #aaa;
+            font-size: 15px;
+        }
+
+        .pricing-features li:before {
+            content: '✓';
+            color: #fff;
+            font-weight: 700;
+            margin-right: 10px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: linear-gradient(180deg, #0a0a0a 0%, #000 100%);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 60px auto 0;
+        }
+
+        .faq-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid #222;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            font-size: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(255,255,255,0.05);
+        }
+
+        .faq-answer {
+            padding: 0 30px 25px;
+            color: #888;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .faq-icon {
+            font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Guarantee Section */
+        .guarantee-section {
+            background: #000;
+            padding: 80px 0;
+            border-top: 1px solid #222;
+        }
+
+        .guarantee-box {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%);
+            border: 2px solid #fff;
+        }
+
+        .guarantee-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .guarantee-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .guarantee-text {
+            font-size: 18px;
+            color: #aaa;
+            line-height: 1.7;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            background: linear-gradient(135deg, #0a0a0a 0%, #000 100%);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .final-cta-headline {
+            font-size: 52px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .final-cta-subtext {
+            font-size: 20px;
+            color: #888;
+            margin-bottom: 50px;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            border-top: 1px solid #222;
+            padding: 40px 0;
+            text-align: center;
+            color: #555;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-headline {
+                font-size: 42px;
+            }
+
+            .deck-copy {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .solution-headline {
+                font-size: 38px;
+            }
+
+            .cta-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="eyebrow">যারা business এ invest করেও কোনো result পাচ্ছেন না তাদের জন্য</div>
+            <h1 class="main-headline">
+                Facebook Ads এ অযথা টাকা নষ্ট করা বন্ধ করুন
+            </h1>
+            <p class="deck-copy">
+                ৩০ দিনে <span class="highlight"> নিশ্চিত leads </span> এবং  <span class="highlight">পরিমাপযোগ্য ROI </span> পান—কোনো মিথ্যা প্রতিশ্রুতি, লুকানো খরচ বা অস্পষ্ট কৌশল ছাড়াই। আপনার budget অনুযায়ী সত্যিকারের কাজ করে এমন data-driven Ads।"
+            </p>
+            <div class="cta-group">
+                <a href="https://wa.me/yourwhatsappnumber" class="btn btn-primary">বিনামূল্যে আপনার Business এর জন্য Marketing Audit </a>
+                <a href="#pricing" class="btn btn-secondary">আমাদের Lead Generation Process </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shocking Statement -->
+    <section class="shocking-statement">
+        <div class="container">
+            <div class="shocking-box">
+                <h2 class="shocking-headline">
+                    ৮৭% Small Business তাদের সম্পূর্ণ Ad Budget প্রথম ৯০ দিনেই নষ্ট করে ফেলে—এবং এই Loss কখনোই পুষিয়ে নিতে পারে না।
+                </h2>
+                <p class="shocking-subtext">
+                    গড়ে একজন Business Owner Facebook Ads এ ৳৫০,০০০+ ব্যয় করে কোনো Return না পেয়ে বিশ্বাস করেন যে 'Ads কাজ করে না'—যখন প্রকৃত সমস্যা ছিল সঠিক দক্ষতা ও কৌশলের অভাব।
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Definition -->
+    <section class="problem-section">
+        <div class="container">
+            <h2 class="section-title">Facebook Ads সত্যিই কাজ করে—কিন্তু শুধুমাত্র যখন একজন Expert এটি পরিচালনা করে</h2>
+            
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">💸</div>
+                    <h3 class="problem-title">Budget নিয়ে সতর্ক থাকা জরুরি</h3>
+                    <p class="problem-text">
+                        Ads এ Clicks আর Leads এর জন্য প্রচুর টাকা খরচ  করছেন, কিন্তু একটিও Sale পাচ্ছেন না। আপনার Profit Margin Already কম। যদি কোনো অদক্ষ ব্যক্তি আপনার Ads পরিচালনা করে এবং Budget সম্পর্কে সতর্ক না থাকে, তাহলে মাত্র একটি খারাপ মাসই আপনার পুরো Business ধ্বংস করে দিতে পারে।
+                    </p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">🤖</div>
+                    <h3 class="problem-title">Bot Traffic এবং ভুয়া Leads</h3>
+                    <p class="problem-text">
+                        বাজারে এমন অনেকেই আছে যারা আপনাকে Bot Traffic আর ভুয়া Leads বিক্রি করবে। এগুলো কখনোই আপনার Business Growth এ  সাহায্য করবে না। উদাহরণস্বরূপ—Instagram/Facebook এ Followers কেনা। দেখতে সংখ্যা বাড়ে, কিন্তু একটি Sale হয় না।
+                    </p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">🎭</div>
+                    <h3 class="problem-title">কিছু প্রতারক মিথ্যা প্রতিশ্রুতি দেয়
+</h3>
+                    <p class="problem-text">
+                        ১০x ROAS গ্যারান্টি। '৭ দিনে Result পাবেন।' কিন্তু যখন প্রমাণ চান, তখন শুধু অজুহাত শুনতে পাবেন। এরা Screenshots জাল করে, আর যখন সমস্যা হয় তখন হাওয়া হয়ে যায়। হয়তো আপনিও আগে এমন ক্ষতির মুখে পড়েছেন।
+                    </p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">📊</div>
+                    <h3 class="problem-title">কোনো স্বচ্ছতা নেই
+</h3>
+                    <p class="problem-text">
+                        আপনার Ads যারা Handle করছে, তারা আসলে কী করছে আপনি জানেন না। আপনার নিজের Ad Account এ Access নেই। Campaign ব্যর্থ হলে কোনো ব্যাখ্যা পাবেন না। তাদের কাছে থেকে শুধু অস্পষ্ট Reports পাবেন এবং তারা বারবার আরো Budget চাইবে।
+                    </p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">⚠️</div>
+                    <h3 class="problem-title">Ad Account Ban হয়ে যায়
+</h3>
+                    <p class="problem-text">
+                        একটিমাত্র ভুল পদক্ষেপে আপনার Ad Account Restrict অথবা Permanently Ban হয়ে যেতে পারে। বেশিরভাগ Business Owners জানেন না কীভাবে এটি প্রতিরোধ করতে হয় বা সমাধান করতে হয়। একবার Ban হলে, আপনার মাসের পুরো Marketing বন্ধ। কোনো Ads চলবে না। Business থমকে যাবে।
+                    </p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">🎯</div>
+                    <h3 class="problem-title">Traffic আসছে, কিন্তু Sales হচ্ছে না</h3>
+                    <p class="problem-text">
+                        আপনার Website বা Page এ Clicks আর Visitors আসছে, কিন্তু কেউ কিনছে না। একজন Customer পেতে যত টাকা খরচ হচ্ছে, তা আপনার Profit Margin এর চেয়ে বেশি। মানে প্রতিটি Sale এ আপনি লস করছেন। আপনার Marketing Strategy ভুল, Targeting ভুল—কিন্তু কেউ ঠিক করছে না। ফলাফল? শুধু টাকা যাচ্ছে, আয় হচ্ছে না।
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agitation -->
+    <section class="agitation-section">
+        <div class="container">
+            <h2 class="section-title">এই বিষয়ে যদি এখন কিছুই না করেন তাহলে কী হবে?
+</h2>
+            
+            <div class="consequence-list">
+                <div class="consequence-item">
+                    <h3 class="consequence-title">আপনার Competitors আপনার Market দখল করে নিচ্ছে</h3>
+                    <p class="consequence-text">
+                        আপনি যখন অকার্যকর Ads নিয়ে আটকে আছেন,  তখন আপনার Competitors Data-driven Strategy ব্যবহার করে Market দখল করছে। যে Leads গুলো আপনার পাওয়ার কথা ছিল, সেগুলো তারা নিয়ে যাচ্ছে। প্রতিদিন আপনি অপেক্ষা করছেন, আর তারা শক্তিশালী হচ্ছে। আপনি আরো পিছিয়ে যাচ্ছেন।
+                    </p>
+                </div>
+
+                <div class="consequence-item">
+                    <h3 class="consequence-title">আপনি শূন্যে টাকা ফেলে যাচ্ছেন
+</h3>
+                    <p class="consequence-text">
+                        কোনো সঠিক System ছাড়া, আপনি একই চক্রে ঘুরতে থাকবেন: একটি Agency নিয়োগ দিলেন, টাকা হারালেন, তাদের বাদ দিলেন, আবার শুরু। আপনি ইতিমধ্যে হাজার হাজার টাকা নষ্ট করেছেন। আর কত টাকা হারানোর সামর্থ্য আছে আপনার? খুব দেরি হয়ে যাওয়ার আগে?
+                    </p>
+                </div>
+
+                <div class="consequence-item">
+                    <h3 class="consequence-title">আপনার Business Growth বন্ধ হয়ে যাবে
+</h3>
+                    <p class="consequence-text">
+                        কোনো Lead নেই মানে কোনো Sale নেই, আর কোনো Sale নেই মানে কোনো Growth নেই। আপনার Business থেমে যাবে কিন্তু খরচ বাড়তেই থাকবে। শেষ পর্যন্ত আপনাকে খরচ কমাতে হবে, কর্মচারী ছাঁটাই করতে হবে, অথবা আরো খারাপ—Business বন্ধ করে দিতে হবে। শুধুমাত্র কারণ আপনি Ads এর সমস্যা সমাধান করতে পারেননি।
+                    </p>
+                </div>
+
+                <div class="consequence-item">
+                    <h3 class="consequence-title">আপনি Digital Marketing এর উপর বিশ্বাস হারাবেন
+</h3>
+                    <p class="consequence-text">
+                        বারবার ক্ষতির মুখে পড়ার পর, আপনি Facebook Ads সম্পূর্ণভাবে ছেড়ে দেবেন। আর এতে করে আপনি সবচেয়ে কম খরচে Customer পাওয়ার সুযোগ হারাবেন। তখন আপনাকে অনেক বেশি দামি পদ্ধতি ব্যবহার করতে হবে, অথবা শুধু Word-of-mouth এর উপর নির্ভর করতে হবে—যা আপনার Business বড় করতে পারবে না।
+                    </p>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="solution-content">
+                <h2 class="solution-headline">
+                    Facebook Ads run করার আরো ভালো একটি পথ আছে: Data-Driven Ads যা আপনার Budget নষ্ট করে না
+                </h2>
+                <p class="solution-description">
+                    আমরা সেই রকম Agency নই যারা বড় বড় কথা বলে কিন্তু কিছু করে না। আমরা Modern Technology, সঠিক Data, এবং AI Technology দিয়ে কাজ করি যা  আপনাকে নির্ভরযোগ্য Result দেয়। কোনো অনুমান নয়। কোনো ধোঁকা নয়। শুধুমাত্র হিসাব, Pattern, এবং প্রমাণ।
+                </p>
+                <p class="solution-description">
+                    প্রথমে ছোট একটি Test দিয়ে শুরু করি—বিশাল টাকা চাই না। আমরা যা করছি সব আপনাকে দেখাই এবং ব্যাখ্যা করি। আপনার Ad Account এ আপনার সম্পূর্ণ Control থাকবে। আর শুধুমাত্র তখনই বড় করি যখন সংখ্যা বলে যে এটা সফল। সিদ্ধান্ত সবসময় আপনার।
+                </p>
+
+                <div class="solution-pillars">
+                    <div class="pillar">
+                        <div class="pillar-number">01</div>
+                        <h3 class="pillar-title">স্বচ্ছ Testing
+</h3>
+                        <p class="pillar-text">Testing দিয়ে শুরু করুন। Result দেখুন তারপর সিদ্ধান্ত নিন।.</p>
+                    </div>
+
+                    <div class="pillar">
+                        <div class="pillar-number">02</div>
+                        <h3 class="pillar-title">Data, অনুমান নয় </h3>
+                        <p class="pillar-text">প্রতিটি সিদ্ধান্ত Analytics, A/B Tests, এবং প্রমাণিত Pattern দিয়ে নেওয়া—অনুভূতি দিয়ে নয়।</p>
+                    </div>
+
+                    <div class="pillar">
+                        <div class="pillar-number">03</div>
+                        <h3 class="pillar-title">AI-Powered সুবিধা </h3>
+                        <p class="pillar-text">আমরা Vo3 এবং Sora এর মতো আধুনিক AI Tools ব্যবহার করি যা মানুষের Attention grab করতে পারে এমন Content বানাতে।.</p>
+                    </div>
+
+                    <div class="pillar">
+                        <div class="pillar-number">04</div>
+                        <h3 class="pillar-title">সৎ প্রত্যাশা </h3>
+                        <p class="pillar-text">আমরা বলি কোনটা কাজ করবে না, বাস্তবসম্মত KPIs ঠিক করি, এবং কখনো অলৌকিক Promise করি না।
+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">আমাদের Agency এর কাছ থেকে আপনি কী কী পাবেন
+</h2>
+            
+            <div class="features-list">
+                <div class="feature-item">
+                    <div class="feature-bullet">🎯</div>
+                    <div class="feature-content">
+                        <h3>আপনার Industry অনুযায়ী Ad Strategy</h3>
+                        <p>আপনার নির্দিষ্ট Business এর জন্য সঠিক Targeting, Messaging, এবং Strategy —আপনি E-commerce, Services, বা B2B যাই করেন না কেন। আমরা আপনার Competitors এর Ads/Strategy বিশ্লেষণ করি এবং তাদের কোন পদ্ধতি কাজ করছে সেটা বের করি, যাতে আপনি ভুল পথে সময় নষ্ট না করেন।.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-bullet">🔬</div>
+                    <div class="feature-content">
+                        <h3>Real-Time Data Dashboards (আমরা যা দেখি আপনিও দেখবেন) </h3>
+                        <p>২৪/৭ Live Performance দেখুন—মাসিক Report এর জন্য অপেক্ষা করতে হবে না। প্রতিটি টাকা কোথায় যাচ্ছে, কোন Ads কাজ করছে, এবং কেন আমরা পরিবর্তন করছি—সব দেখতে পারবেন। সম্পূর্ণ স্বচ্ছতা মানে আপনার Investment নিয়ে আপনি কখনো অন্ধকারে থাকবেন না।.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-bullet">🤖</div>
+                    <div class="feature-content">
+                        <h3>AI-Powered Creative Production (বেশি Content কম সময়ে) </h3>
+                        <p>আমরা Vo3 এবং Sora এর মতো AI Tools দিয়ে ৫০+ Video তৈরি করি—যেখানে অন্যরা ৫টি বানাতে সময় নেয়। বেশি Content মানে বেশি Testing, মানে দ্রুত সফল Ad খুঁজে পাওয়া—কম খরচে।
+.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-bullet">🛡️</div>
+                    <div class="feature-content">
+                        <h3>Ad Account সুরক্ষা (আর কখনো Ban হবে না) </h3>
+                        <p>Facebook এর নিয়ম পরিবর্তন হলে আমরা সাথে সাথে জানি এবং আগেই সতর্কতা নিই—যাতে আপনার Account কখনো Ban না হয়। কারণ একবার Ban হলে এক মাসের পুরো কাজ নষ্ট।</p>
+                    </div>
+                </div>
+
+     
+
+                <div class="feature-item">
+                    <div class="feature-bullet">💰</div>
+                    <div class="feature-content">
+                        <h3>Budget বাড়ানোর সঠিক সময় জানুন </h3>
+                        <p>কখন আপনার Ad Budget বাড়ানো উচিত সেটা সঠিক Data দিয়ে বলে দিই—অনুমানে নয়। 
+.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-bullet">🎬</div>
+                    <div class="feature-content">
+                        <h3>মানুষের Attention ধরার মতো Content </h3>
+                        <p>আপনার আদর্শ Customer কে থামিয়ে দেওয়ার মতো Content বানাই। প্রথম ৩ সেকেন্ডেই তাদের আগ্রহ তৈরি করি, যাতে তারা আপনার Ad দেখে এবং Action নেয়।
+.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-bullet">🔄</div>
+                    <div class="feature-content">
+                        <h3>সাপ্তাহিক Strategy পরিবর্তন (খারাপ Campaign নিয়ে আটকে থাকবেন না) </h3>
+                        <p>অন্যরা যেখানে সপ্তাহের পর সপ্তাহ খারাপ Campaign চালায়, আমরা প্রতি ৭ দিনে Performance যাচাই করি এবং দ্রুত পরিবর্তন করি। কিছু কাজ না করলে, কেন করছে না এবং কী পরিবর্তন করছি—সব জানাই।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credibility Section -->
+    <section class="credibility-section">
+        <div class="container">
+            <h2 class="section-title">আমাদের কেন বিশ্বাস করবেন
+?</h2>
+            
+            <div class="credibility-grid">
+                <div class="stat-item">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Campaigns Managed</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-number">50000৳+</div>
+                    <div class="stat-label">Ad Spend Optimized</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Total Clients</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-number">N/A</div>
+                    <div class="stat-label">Average ROAS</div>
+                </div>
+            </div>
+
+            <div class="why-us-list">
+                <div class="why-item">
+                    <div class="why-icon">🔍</div>
+                    <div class="why-text">আমরা আমাদের ব্যর্থতাও দেখাই, শুধু সফলতা নয়—কারণ স্বচ্ছতা নকল পারফেকশনের চেয়ে দ্রুত বিশ্বাস তৈরি করে
+</div>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">📱</div>
+                    <div class="why-text">আপনার Ad Account আপনার নামেই থাকে—আমরা কখনো Ownership বা Control চাই না যা আপনি সাথে সাথে বাতিল করতে পারবেন না
+</div>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">🎓</div>
+                    <div class="why-text">আমরা আপনার Team কে শেখাই কী করছি—যাতে আপনি শিখছেন, চিরকাল আমাদের উপর নির্ভরশীল নন
+</div>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">⚡</div>
+                    <div class="why-text">আমরা সর্বশেষ AI Tools (Vo3, Sora) এ Certified—যা ৯৯% Agency এখনো জানেই না
+</div>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">💬</div>
+                    <div class="why-text">WhatsApp এ সরাসরি আমাদের Strategist এর সাথে যোগাযোগ—কোনো মাঝখানে Account Manager নেই
+</div>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">🚫</div>
+                    <div class="why-text">যাদের Profit Margin কম তাদের আমরা Client হিসাবে নেই না—কারণ আপনি লস করবেন জেনেও টাকা নেওয়া প্রতারণা
+</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proof Section --
+    <section class="proof-section">
+        <div class="container">
+            <h2 class="section-title">Real Results from Real Businesses (Not Cherry-Picked Screenshots)</h2>
+            
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-metric">12.4x ROAS</div>
+                    <div class="result-description">E-commerce brand went from $3,200/month in losses to $39,680 in profit in 67 days using our AI-driven creative testing system</div>
+                    <div class="result-client">— Fashion Retailer, Dhaka</div>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-metric">$4.20 CPL</div>
+                    <div class="result-description">B2B service company reduced cost per lead from $14.50 to $4.20 while tripling lead quality through our filtering protocol</div>
+                    <div class="result-client">— SaaS Company, Global</div>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-metric">247% Growth</div>
+                    <div class="result-description">Local service business scaled from 8 leads/day to 28 leads/day in 45 days without increasing ad spend by a single taka</div>
+                    <div class="result-client">— Home Services, Bangladesh</div>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-metric">0 Bans</div>
+                    <div class="result-description">Protected 127 ad accounts from restrictions over 18 months using our compliance monitoring system—100% success rate</div>
+                    <div class="result-client">— All Clients Combined</div>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-metric">38 Days</div>
+                    <div class="result-description">Average time to profitability for new clients—vs. the industry average of 90+ days of "testing" (aka losing money)</div>
+                    <div class="result-client">— Agency Average, 2024</div>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-metric">94% Stay</div>
+                    <div class="result-description">Client retention rate after 6 months—because when ads actually work, people don't leave</div>
+                    <div class="result-client">— Verified by Third-Party Audit</div>
+                </div>
+            </div>
+        </div>
+    </section> >
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <h2 class="section-title">হারানোর কিছু নেই, পাওয়ার সবকিছু আছে
+
+</h2>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Pilot Test</h3>
+                    <div class="pricing-price">Contact for Quote</div>
+                    <div class="pricing-period">একবার / ৩০ দিন
+</div>
+                    <ul class="pricing-features">
+                        <li>সম্পূর্ণ Market Research এবং Audience Analysis সঠিক Targeting এর জন্য
+</li>
+                        <li>সম্পূর্ণ Digital + Traditional Marketing Strategy সব Platform জুড়ে
+</li>
+                        <li>Ad Account + Facebook Page Setup/Optimization
+</li>
+                        <li>৫টি ভিন্ন Data-based Ad Concept Testing
+</li>
+                        <li>চূড়ান্ত Report: কী কাজ করেছে এবং কী করেনি
+</li>
+                        <li>৩০ দিনের মধ্যে Ads থেকে Break Even না হলে, আপনি এক টাকাও দেবেন না
+
+</li>
+                    </ul>
+                    <a href="https://wa.me/yourwhatsappnumber" class="btn btn-secondary">Get a Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">আপনি এখন যে প্রশ্নগুলো করছেন
+</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>অন্য Agency থেকে আমরা কীভাবে আলাদা?
+</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        তিনটি বিষয়: (১) আমরা কম খরচের Pilot Test দিয়ে শুরু করি। (২) আপনার Ad Account এ সম্পূর্ণ Access এবং Live Dashboard—কিছুই লুকাই না। (৩) আপনার Profit Margin কম হলে আগেই বলি, টাকা নিয়ে পরে হতাশ করি না।
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Facebook Ads আমার Business এর জন্য কাজ না করলে?
+</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        সম্ভব, এবং আমরা Pilot Test এ সেটা বলে দেব। কিছু Business এর Margin খুব কম, Product খুব নির্দিষ্ট, অথবা দাম খুব বেশি—Facebook Ads লাভজনক হয় না। ৩০ দিনে বুঝতে পারলে সম্পূর্ণ টাকা ফেরত দেব এবং ভালো পদ্ধতি suggest করব।
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>আমি আগে ৩টি Agency দিয়ে ক্ষতির মুখে পড়েছি। আপনাদের কেন বিশ্বাস করব?
+</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        এখনই বিশ্বাস করবেন না। সেজন্যই Pilot Test আছে। কোনো দীর্ঘমেয়াদী চুক্তি নেই। শুধু ৩০ দিন প্রমাণ করার সুযোগ। Result না হলে টাকা ফেরত। বিশ্বাস কথায় নয়, কাজে তৈরি হয়।
+
+                    </div>
+                </div>
+
+                
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Minimum কত Ad Budget লাগবে?
+</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Pilot test-এর জন্য, ৩০  দিনের মধ্যে ৳30000-৳50000 ad spend করার পরামর্শ দিচ্ছি। আর ongoing campaigns-এর ক্ষেত্রে, statistically significant data কালেক্ট করার জন্য আমরা মাসে অন্তত ৳50000-৳1,50000 minimum budget রেকমেন্ড করি। যদি আপনার বাজেট এর চেয়ে কম হয়, তবে আমরা honestly বলে দেব যে আমরা আসলে কোনো meaningful results দিতে পারব কি না—কারণ মাসে মাত্র ৳10000 দিয়ে testing করা মানে সাধারণত আপনার সময় এবং টাকা দুটাই নষ্ট করা।
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>নির্দিষ্ট ROAS বা Lead সংখ্যা Guarantee করেন?
+</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        না, এবং যে করে সে মিথ্যা বলছে। ROAS নির্ভর করে আপনার Product, দাম, বাজার—অনেক কিছুর উপর। আমরা Guarantee করি: (১) সম্পূর্ণ স্বচ্ছতা, (২) Data-driven সিদ্ধান্ত, (৩) Pilot Test এ উন্নতি না হলে টাকা ফেরত। প্রতিশ্রুতি নয়, ফলাফল।
+
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Ad Account Ban হয়ে গেলে?
+</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        আমরা প্রতিদিন Compliance পর্যবেক্ষণ করি এবং Facebook এর নিয়ম মেনে চলি। যদি সমস্যা হয় আমরা বিনামূল্যে Appeal Process সাহায্য করব। আপনাকেও শেখাব যাতে ভবিষ্যতে সুরক্ষিত থাকেন।
+                    </div>
+                </div>
+
+             
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>আমার Industry তে কাজ করেন?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        আমরা E-commerce, B2B Services, Local Business, SaaS, Education, এবং Healthcare নিয়ে কাজ করেছি। Pilot Test এ আপনার নির্দিষ্ট Niche বিশ্লেষণ করব এবং Competitor এর কোন Ad Strategy কাজ করছে দেখাব।
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Pilot Test এর পর কী হবে?
+</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        বিস্তারিত Report পাবেন: (১) কী Test করেছি, (২) প্রতিটি Ad এর Performance Data, (৩) সেরা Audience এবং Creative, (৪) Scale করলে কী ফলাফল আশা করা যায়, (৫) চালিয়ে যাওয়া উচিত কিনা সৎ মতামত। Result ভালো হলে Growth Plan দেব। না হলে সব তথ্য আপনার কাছে থাকবে।
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee-section">
+        <div class="container">
+            <div class="guarantee-box">
+                <div class="guarantee-icon">🛡️</div>
+                <h3 class="guarantee-title"> "Results or Refund" Guarantee</h3>
+                <p class="guarantee-text">
+                    যদি আমরা ৩০ দিনের Pilot Test এ আপনার Ad Performance এ পরিমাপযোগ্য উন্নতি দিতে না পারি—ভালো CTR, কম CPL, অথবা আগের চেয়ে ভালো মানের Leads—তাহলে আমরা আপনার ১০০% Pilot Fee ফেরত দেব। কোনো প্রশ্ন নেই, কোনো ঝামেলা নেই। আপনি জিতলেই আমরা জিতি।
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <h2 class="final-cta-headline">
+                আর Ads এর উপরে জুয়া নয়, আসল Growth শুরু করুন
+            </h2>
+            <p class="final-cta-subtext">
+                বিনামূল্যে ১৫ মিনিটের Strategy Call বুক করুন। আমরা আপনার বর্তমান Ads Audit করব, কোথায় সমস্যা আছে তা দেখাব, এবং সামনে এগিয়ে যাওয়ার জন্য একটি পরিষ্কার পথ দেব—এমনকি যদি আপনি আমাদের কখনো Hire না-ও করেন।
+            </p>
+            <div class="cta-group">
+                <a href="https://wa.me/yourwhatsappnumber" class="btn btn-primary">WhatsApp এ Message করুন</a>
+                <a href="https://calendly.com/yourlink" class="btn btn-secondary">Strategy Call বুক করুন</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Zephyr Inc. All rights reserved. | Based in Bangladesh, Serving Local and Global Clients</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const answer = faqItem.querySelector('.faq-answer');
+                const icon = question.querySelector('.faq-icon');
+                
+                // Toggle display
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    icon.textContent = '+';
+                } else {
+                    answer.style.display = 'block';
+                    icon.textContent = '−';
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
