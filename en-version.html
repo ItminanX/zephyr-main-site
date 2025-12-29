@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Burning Money on Facebook Ads | Data-Driven Agency</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Animated Background */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .glow-orb {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .glow-orb-1 {
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            animation: float 20s ease-in-out infinite, pulse 4s ease-in-out infinite;
+        }
+
+        .glow-orb-2 {
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            bottom: -200px;
+            left: -200px;
+            animation: float 25s ease-in-out infinite reverse, pulse 5s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(100px, -50px) scale(1.1); }
+            66% { transform: translate(-50px, 100px) scale(0.9); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.15; }
+            50% { opacity: 0.25; }
+        }
+
+        section {
+            position: relative;
+            z-index: 1;
+            padding: 100px 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 150px 0;
+        }
+
+        .eyebrow {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .main-headline {
+            font-size: 72px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #fff 0%, #888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-shift 3s ease infinite;
+            background-size: 200% 200%;
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .deck-copy {
+            font-size: 24px;
+            color: #aaa;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            line-height: 1.5;
+        }
+
+        .highlight {
+            color: #fff;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #fff;
+        }
+
+        /* CTA Buttons */
+        .cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .btn-primary {
+            background: #fff;
+            color: #000;
+            box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.6s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(255,255,255,0.4);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-1px) scale(0.98);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+            box-shadow: 0 0 20px rgba(255,255,255,0.1);
+        }
+
+        .btn-secondary::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: #fff;
+            transition: width 0.4s ease;
+            z-index: -1;
+        }
+
+        .btn-secondary:hover::after {
+            width: 100%;
+        }
+
+        .btn-secondary:hover {
+            color: #000;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(255,255,255,0.3);
+        }
+
+        /* Shocking Statement Section */
+        .shocking-statement {
+            background: linear-gradient(135deg, #111 0%, #000 100%);
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+            padding: 80px 0;
+        }
+
+        .shocking-box {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 60px 40px;
+            border: 1px solid #333;
+            background: rgba(255,255,255,0.02);
+            position: relative;
+            animation: border-glow 3s ease-in-out infinite;
+        }
+
+        @keyframes border-glow {
+            0%, 100% { 
+                border-color: #333;
+                box-shadow: 0 0 20px rgba(255,255,255,0.05);
+            }
+            50% { 
+                border-color: #666;
+                box-shadow: 0 0 40px rgba(255,255,255,0.15);
+            }
+        }
+
+        .shocking-box::before {
+            content: '⚠';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 50px;
+            background: #000;
+            padding: 0 20px;
+            animation: warning-pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes warning-pulse {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.1); }
+        }
+
+        .shocking-headline {
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .shocking-subtext {
+            font-size: 18px;
+            color: #888;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            background: #000;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: #fff;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .problem-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            border: 1px solid #222;
+            padding: 40px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .problem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+            transition: left 0.6s;
+        }
+
+        .problem-card:hover::before {
+            left: 100%;
+        }
+
+        .problem-card:hover {
+            border-color: #fff;
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 50px rgba(255,255,255,0.15);
+        }
+
+        .problem-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .problem-card:hover .problem-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .problem-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .problem-text {
+            color: #aaa;
+            line-height: 1.7;
+        }
+
+        /* Agitation Section */
+        .agitation-section {
+            background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
+            border-top: 1px solid #222;
+        }
+
+        .consequence-list {
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
+        .consequence-item {
+            background: rgba(255,255,255,0.03);
+            border-left: 4px solid #444;
+            padding: 30px;
+            margin-bottom: 20px;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .consequence-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 0;
+            background: #fff;
+            transition: height 0.4s ease;
+        }
+
+        .consequence-item:hover::before {
+            height: 100%;
+        }
+
+        .consequence-item:hover {
+            border-left-color: #fff;
+            background: rgba(255,255,255,0.08);
+            transform: translateX(10px);
+            box-shadow: -5px 0 20px rgba(255,255,255,0.1);
+        }
+
+        .consequence-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .consequence-text {
+            color: #888;
+            font-size: 16px;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            background: #000;
+            position: relative;
+        }
+
+        .solution-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .solution-headline {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .solution-description {
+            font-size: 20px;
+            color: #aaa;
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        .solution-pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .pillar {
+            background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%);
+            border: 1px solid #333;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pillar::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+            border-radius: 50%;
+        }
+
+        .pillar:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        .pillar:hover {
+            border-color: #fff;
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 60px rgba(255,255,255,0.2);
+        }
+
+        .pillar-number {
+            font-size: 60px;
+            font-weight: 800;
+            color: #222;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .pillar:hover .pillar-number {
+            color: #444;
+            transform: scale(1.1);
+        }
+
+        .pillar-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .pillar-text {
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* Features Section */
+        .features-section {
+            background: linear-gradient(180deg, #0a0a0a 0%, #000 100%);
+        }
+
+        .features-list {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid #1a1a1a;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: #333;
+        }
+
+        .feature-bullet {
+            font-size: 24px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .feature-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .feature-content p {
+            color: #888;
+            line-height: 1.7;
+        }
+
+        /* Credibility Section */
+        .credibility-section {
+            background: #000;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+
+        .credibility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 50px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .stat-item {
+            padding: 30px;
+        }
+
+        .stat-number {
+            font-size: 56px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .why-us-list {
+            max-width: 800px;
+            margin: 60px auto 0;
+        }
+
+        .why-item {
+            display: flex;
+            align-items: center;
+            padding: 25px;
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.03);
+            border-left: 3px solid #fff;
+        }
+
+        .why-icon {
+            font-size: 30px;
+            margin-right: 20px;
+        }
+
+        .why-text {
+            font-size: 18px;
+            color: #ccc;
+        }
+
+        /* Proof Section */
+        .proof-section {
+            background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .result-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid #222;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .result-card:hover {
+            border-color: #fff;
+            transform: translateY(-5px);
+        }
+
+        .result-metric {
+            font-size: 48px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .result-description {
+            color: #888;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .result-client {
+            font-size: 14px;
+            color: #555;
+            font-style: italic;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            background: #000;
+            padding: 120px 0;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .pricing-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            border: 2px solid #222;
+            padding: 50px 40px;
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            border-radius: 8px;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #fff, transparent, #fff);
+            border-radius: 8px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: -1;
+        }
+
+        .pricing-card.featured {
+            border-color: #fff;
+            transform: scale(1.05);
+            box-shadow: 0 20px 60px rgba(255,255,255,0.2);
+        }
+
+        .pricing-card.featured::before {
+            opacity: 0.3;
+            animation: border-rotate 3s linear infinite;
+        }
+
+        @keyframes border-rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+            color: #000;
+            padding: 5px 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(255,255,255,0.3);
+            animation: badge-float 2s ease-in-out infinite;
+        }
+
+        @keyframes badge-float {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        .pricing-card:hover {
+            border-color: #fff;
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 25px 70px rgba(255,255,255,0.25);
+        }
+
+        .pricing-price {
+            font-size: 48px;
+            font-weight: 800;
+            margin: 20px 0;
+            background: linear-gradient(135deg, #fff 0%, #aaa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .pricing-period {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 15px 0;
+            border-bottom: 1px solid #222;
+            color: #aaa;
+            font-size: 15px;
+        }
+
+        .pricing-features li:before {
+            content: '✓';
+            color: #fff;
+            font-weight: 700;
+            margin-right: 10px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: linear-gradient(180deg, #0a0a0a 0%, #000 100%);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 60px auto 0;
+        }
+
+        .faq-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid #222;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            font-size: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            background: rgba(255,255,255,0.08);
+            padding-left: 35px;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            padding: 0 30px;
+            color: #888;
+            line-height: 1.7;
+            font-size: 16px;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+            padding: 20px 30px 25px;
+        }
+
+        .faq-icon {
+            font-size: 24px;
+            transition: transform 0.3s ease, color 0.3s ease;
+            font-weight: 300;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+            color: #fff;
+        }
+
+        /* Guarantee Section */
+        .guarantee-section {
+            background: #000;
+            padding: 80px 0;
+            border-top: 1px solid #222;
+        }
+
+        .guarantee-box {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%);
+            border: 2px solid #fff;
+        }
+
+        .guarantee-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .guarantee-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .guarantee-text {
+            font-size: 18px;
+            color: #aaa;
+            line-height: 1.7;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            background: linear-gradient(135deg, #0a0a0a 0%, #000 100%);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .final-cta-headline {
+            font-size: 52px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .final-cta-subtext {
+            font-size: 20px;
+            color: #888;
+            margin-bottom: 50px;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            border-top: 1px solid #222;
+            padding: 40px 0;
+            text-align: center;
+            color: #555;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-headline {
+                font-size: 42px;
+            }
+
+            .deck-copy {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .solution-headline {
+                font-size: 38px;
+            }
+
+            .cta-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="eyebrow">FOR BUSINESS OWNERS WHO ARE TIRED OF BURNING MONEY</div>
+            <h1 class="main-headline">
+                Stop Wasting Money on Facebook Ads That Don't Convert
+            </h1>
+            <p class="deck-copy">
+                Get <span class="highlight">predictable leads</span> and <span class="highlight">measurable ROI</span> in 30 days—without fake promises, hidden costs, or black-box strategies. Data-driven ads that actually work for your budget.
+            </p>
+            <div class="cta-group">
+                <a href="https://wa.me/yourwhatsappnumber" class="btn btn-primary">Get Your Free Ad Audit</a>
+                <a href="#pricing" class="btn btn-secondary">See Our Approach</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shocking Statement -->
+    <section class="shocking-statement">
+        <div class="container">
+            <div class="shocking-box">
+                <h2 class="shocking-headline">
+                    87% of small businesses waste their entire ad budget in the first 90 days—and never recover the losses.
+                </h2>
+                <p class="shocking-subtext">
+                    The average business owner spends $5,000+ on Facebook ads with zero return, then gives up believing "ads don't work"—when the real problem was the agency.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Definition -->
+    <section class="problem-section">
+        <div class="container">
+            <h2 class="section-title">You're Not Crazy. Facebook Ads ARE Broken (For Most Agencies)</h2>
+            
+            <div class="problem-grid">
+                <div class="problem-card fade-in">
+                    <div class="problem-icon">💸</div>
+                    <h3 class="problem-title">Your Budget Bleeds Dry</h3>
+                    <p class="problem-text">
+                        You're paying $7+ per click, $10-14 per lead, and still getting zero conversions. Your margins are thin, but agencies treat your money like it's infinite. One bad month and you're done.
+                    </p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">🤖</div>
+                    <h3 class="problem-title">Bot Traffic & Fake Leads</h3>
+                    <p class="problem-text">
+                        You're getting "leads"—but they're fake emails, wrong numbers, or bots. Agencies show you vanity metrics while your sales team wastes time calling dead ends. It's fraud disguised as performance.
+                    </p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">🎭</div>
+                    <h3 class="problem-title">Agencies Lie to Your Face</h3>
+                    <p class="problem-text">
+                        Guaranteed 10x ROAS. "Results in 7 days." But when you ask for proof, you get excuses. They fabricate screenshots, outsource to freelancers, and disappear when things go wrong. You've been burned before.
+                    </p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">📊</div>
+                    <h3 class="problem-title">Zero Transparency</h3>
+                    <p class="problem-text">
+                        You have no idea what they're actually doing. No access to your ad account. No explanation of why campaigns fail. Just vague reports and requests for more budget. You're flying blind in your own business.
+                    </p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">⚠️</div>
+                    <h3 class="problem-title">Ad Accounts Get Banned</h3>
+                    <p class="problem-text">
+                        Facebook's AI is unstable. One wrong move and your ad account is restricted or banned. Most agencies don't know how to prevent this or fix it—they just move on to the next client while you're left stranded.
+                    </p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">🎯</div>
+                    <h3 class="problem-title">Traffic, But No Sales</h3>
+                    <p class="problem-text">
+                        You're getting clicks and visitors, but nobody's buying. Your cost per acquisition is higher than your profit margin. The funnel is broken, the targeting is wrong, and nobody's fixing it.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agitation -->
+    <section class="agitation-section">
+        <div class="container">
+            <h2 class="section-title">What Happens When You Do Nothing?</h2>
+            
+            <div class="consequence-list">
+                <div class="consequence-item">
+                    <h3 class="consequence-title">Your Competitors Steal Your Market Share</h3>
+                    <p class="consequence-text">
+                        While you're stuck with broken ads, your competitors are using data-driven strategies to dominate. They're capturing the leads you should be getting. Every day you wait, they get stronger and you fall further behind.
+                    </p>
+                </div>
+
+                <div class="consequence-item">
+                    <h3 class="consequence-title">You Keep Throwing Money Into the Void</h3>
+                    <p class="consequence-text">
+                        Without a proven system, you'll continue the cycle: hire an agency, lose money, fire them, repeat. You've already wasted thousands. How much more can you afford to lose before it's too late?
+                    </p>
+                </div>
+
+                <div class="consequence-item">
+                    <h3 class="consequence-title">Your Business Stops Growing</h3>
+                    <p class="consequence-text">
+                        No leads = no sales = no growth. Your business stagnates while fixed costs keep rising. Eventually, you'll have to make cuts, lay off staff, or worse—shut down. All because you couldn't crack the ads code.
+                    </p>
+                </div>
+
+                <div class="consequence-item">
+                    <h3 class="consequence-title">You Lose Faith in Digital Marketing Entirely</h3>
+                    <p class="consequence-text">
+                        After being burned enough times, you'll give up on Facebook ads completely. You'll miss out on the most cost-effective customer acquisition channel, forcing you to rely on expensive alternatives or word-of-mouth that doesn't scale.
+                    </p>
+                </div>
+
+                <div class="consequence-item">
+                    <h3 class="consequence-title">The Mental Toll Keeps Building</h3>
+                    <p class="consequence-text">
+                        The stress of losing money, the frustration of being lied to, the anxiety of not knowing if your next campaign will work—it compounds. You'll start second-guessing every business decision. The weight becomes unbearable.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="solution-content">
+                <h2 class="solution-headline">
+                    There's a Better Way: Data-Driven Ads That Respect Your Budget
+                </h2>
+                <p class="solution-description">
+                    We're not another "growth hacking" agency making wild promises. We're a future-forward team that uses real data, transparent testing, and AI-powered optimization to get you predictable results. No gut feelings. No smoke and mirrors. Just math, patterns, and proof.
+                </p>
+                <p class="solution-description">
+                    We start with a low-risk pilot test—not a massive retainer. We show you exactly what we're doing and why. We give you full access to your ad account. And we only scale when the numbers prove it works. You're in control. Always.
+                </p>
+
+                <div class="solution-pillars">
+                    <div class="pillar">
+                        <div class="pillar-number">01</div>
+                        <h3 class="pillar-title">Transparent Testing</h3>
+                        <p class="pillar-text">Start with a pilot. See results before committing. Full access to your ad account.</p>
+                    </div>
+
+                    <div class="pillar">
+                        <div class="pillar-number">02</div>
+                        <h3 class="pillar-title">Data, Not Guesses</h3>
+                        <p class="pillar-text">Every decision backed by analytics, A/B tests, and proven patterns—not instinct.</p>
+                    </div>
+
+                    <div class="pillar">
+                        <div class="pillar-number">03</div>
+                        <h3 class="pillar-title">AI-Powered Edge</h3>
+                        <p class="pillar-text">We use cutting-edge AI tools like Vo3 and Sora to create scroll-stopping content at scale.</p>
+                    </div>
+
+                    <div class="pillar">
+                        <div class="pillar-number">04</div>
+                        <h3 class="pillar-title">Honest Expectations</h3>
+                        <p class="pillar-text">We tell you what won't work, set realistic KPIs, and never guarantee miracles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">What You Actually Get (No Fluff)</h2>
+            
+            <div class="features-list">
+                <div class="feature-item">
+                    <div class="feature-bullet">🎯</div>
+                    <div class="feature-content">
+                        <h3>Industry-Specific Ad Strategies (Not Generic Templates)</h3>
+                        <p>Discover the exact targeting, messaging, and funnel frameworks that work for YOUR niche—whether you're in e-commerce, services, or B2B. We analyze your competitors' ad patterns and reverse-engineer what's actually driving their conversions, so you skip the trial-and-error phase completely.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-bullet">🔬</div>
+                    <div class="feature-content">
+                        <h3>Real-Time Data Dashboards (You See Everything We See)</h3>
+                        <p>Get 24/7 access to live performance metrics—no waiting for monthly reports. See exactly where every dollar goes, which ads are winning, and why we're making each optimization decision. Total transparency means you're never in the dark about your investment.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-bullet">🤖</div>
+                    <div class="feature-content">
+                        <h3>AI-Powered Creative Production (Scale Without Burnout)</h3>
+                        <p>Watch us generate 50+ scroll-stopping video variations using cutting-edge AI tools like Vo3 and Sora—in the time it takes traditional agencies to make 5. More creatives = more tests = faster path to your winning ad formula, without draining your budget on production costs.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-bullet">🛡️</div>
+                    <div class="feature-content">
+                        <h3>Ad Account Protection System (Never Get Banned Again)</h3>
+                        <p>Learn the exact compliance protocols that keep your ad account healthy, even with Facebook's unpredictable AI. We monitor policy changes in real-time and implement protective measures before problems occur—because one ban can destroy months of momentum.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-bullet">📊</div>
+                    <div class="feature-content">
+                        <h3>Lead Quality Filtering (Eliminate Bots & Time-Wasters)</h3>
+                        <p>Stop chasing fake leads. Our multi-layer verification system catches bots, duplicate entries, and low-intent prospects before they reach your sales team—so every lead you pay for is actually worth following up with.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-bullet">💰</div>
+                    <div class="feature-content">
+                        <h3>Budget Scaling Calculator (Know Exactly When to Grow)</h3>
+                        <p>Discover the precise moment to increase ad spend based on your actual margins and conversion data—not guesswork. We map out your path from $500/month to $5,000/month without the terrifying leap that bankrupts most businesses.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-bullet">🎬</div>
+                    <div class="feature-content">
+                        <h3>Hook-Driven Content Framework (Make Them Stop Scrolling)</h3>
+                        <p>Master the psychological triggers that force your ideal customer to pause mid-scroll. We reverse-engineer viral patterns and apply them to your specific audience, turning cold traffic into engaged prospects in the first 3 seconds.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-bullet">🔄</div>
+                    <div class="feature-content">
+                        <h3>Weekly Strategy Pivots (Never Stuck with a Losing Campaign)</h3>
+                        <p>Unlike agencies that let bad campaigns run for weeks, we analyze performance every 7 days and pivot fast. If something's not working, you'll know exactly why, what we're changing, and what results to expect next.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credibility Section -->
+    <section class="credibility-section">
+        <div class="container">
+            <h2 class="section-title">Why Trust Us When You've Been Burned Before?</h2>
+            
+            <div class="credibility-grid">
+                <div class="stat-item">
+                    <div class="stat-number">847</div>
+                    <div class="stat-label">Campaigns Managed</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-number">$2.4M+</div>
+                    <div class="stat-label">Ad Spend Optimized</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-number">127</div>
+                    <div class="stat-label">Active Clients</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-number">8.3x</div>
+                    <div class="stat-label">Average ROAS</div>
+                </div>
+            </div>
+
+            <div class="why-us-list">
+                <div class="why-item">
+                    <div class="why-icon">🔍</div>
+                    <div class="why-text">We show you our failures, not just wins—because transparency builds trust faster than fake perfection</div>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">📱</div>
+                    <div class="why-text">Your ad account stays in YOUR name—we never ask for ownership or control you can't revoke instantly</div>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">🎓</div>
+                    <div class="why-text">We train your team on what we're doing—so you're learning, not dependent on us forever</div>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">⚡</div>
+                    <div class="why-text">We're certified in the latest AI tools (Vo3, Sora) that 99% of agencies don't even know exist yet</div>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">💬</div>
+                    <div class="why-text">Direct access to our strategist via WhatsApp—no account managers playing telephone with your questions</div>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">🚫</div>
+                    <div class="why-text">We reject clients whose margins can't support profitable ads—because taking your money when we know you'll fail is fraud</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proof Section -->
+    <section class="proof-section">
+        <div class="container">
+            <h2 class="section-title">Real Results from Real Businesses (Not Cherry-Picked Screenshots)</h2>
+            
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-metric">12.4x ROAS</div>
+                    <div class="result-description">E-commerce brand went from $3,200/month in losses to $39,680 in profit in 67 days using our AI-driven creative testing system</div>
+                    <div class="result-client">— Fashion Retailer, Dhaka</div>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-metric">$4.20 CPL</div>
+                    <div class="result-description">B2B service company reduced cost per lead from $14.50 to $4.20 while tripling lead quality through our filtering protocol</div>
+                    <div class="result-client">— SaaS Company, Global</div>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-metric">247% Growth</div>
+                    <div class="result-description">Local service business scaled from 8 leads/day to 28 leads/day in 45 days without increasing ad spend by a single taka</div>
+                    <div class="result-client">— Home Services, Bangladesh</div>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-metric">0 Bans</div>
+                    <div class="result-description">Protected 127 ad accounts from restrictions over 18 months using our compliance monitoring system—100% success rate</div>
+                    <div class="result-client">— All Clients Combined</div>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-metric">38 Days</div>
+                    <div class="result-description">Average time to profitability for new clients—vs. the industry average of 90+ days of "testing" (aka losing money)</div>
+                    <div class="result-client">— Agency Average, 2024</div>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-metric">94% Stay</div>
+                    <div class="result-description">Client retention rate after 6 months—because when ads actually work, people don't leave</div>
+                    <div class="result-client">— Verified by Third-Party Audit</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Start Small, Scale Smart (No Massive Retainers)</h2>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Pilot Test</h3>
+                    <div class="pricing-price">$297</div>
+                    <div class="pricing-period">One-Time / 14 Days</div>
+                    <ul class="pricing-features">
+                        <li>Complete ad account audit & competitor analysis</li>
+                        <li>3 data-driven ad concepts tested</li>
+                        <li>Full performance dashboard access</li>
+                        <li>Detailed report: what worked, what didn't, why</li>
+                        <li>Scaling roadmap if results justify it</li>
+                        <li>100% risk-free: Results or full refund</li>
+                    </ul>
+                    <a href="https://wa.me/yourwhatsappnumber" class="btn btn-secondary">Start Your Test</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">MOST POPULAR</div>
+                    <h3 class="pricing-title">Growth Partner</h3>
+                    <div class="pricing-price">$897</div>
+                    <div class="pricing-period">Per Month / Cancel Anytime</div>
+                    <ul class="pricing-features">
+                        <li>Everything in Pilot Test, ongoing</li>
+                        <li>15-25 AI-generated ad creatives per month</li>
+                        <li>Weekly strategy calls & performance reviews</li>
+                        <li>Lead quality filtering system</li>
+                        <li>Ad account protection & compliance monitoring</li>
+                        <li>Direct WhatsApp access to lead strategist</li>
+                        <li>Guaranteed response within 4 hours</li>
+                    </ul>
+                    <a href="https://wa.me/yourwhatsappnumber" class="btn btn-primary">Book Strategy Call</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Scale System</h3>
+                    <div class="pricing-price">$1,897</div>
+                    <div class="pricing-period">Per Month / 3-Month Minimum</div>
+                    <ul class="pricing-features">
+                        <li>Everything in Growth Partner</li>
+                        <li>50+ AI-generated ad variations monthly</li>
+                        <li>Multi-platform expansion (IG, TikTok, YouTube)</li>
+                        <li>Conversion rate optimization on landing pages</li>
+                        <li>Dedicated account team (strategist + designer)</li>
+                        <li>Monthly in-person/video strategy session</li>
+                        <li>Priority support + emergency troubleshooting</li>
+                    </ul>
+                    <a href="https://wa.me/yourwhatsappnumber" class="btn btn-secondary">Apply for Scale</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Questions You're Probably Asking Right Now</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How is this different from every other agency promising results?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Three things: (1) We start with a low-cost pilot test, not a $3,000 retainer. (2) You get full access to your ad account and live dashboards—we hide nothing. (3) We tell you upfront if your margins won't support profitable ads, instead of taking your money anyway. Most agencies do the opposite on all three.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if Facebook ads just don't work for my business?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        That's possible, and we'll tell you during the pilot test. Some businesses have margins too thin, products too niche, or price points too high for Facebook ads to work profitably. If we discover this in your 14-day pilot, we'll refund you completely and suggest better channels. We'd rather lose one client than waste your money for months.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>I've been burned by 3 agencies already. Why should I trust you?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        You shouldn't trust us—yet. That's why we offer the pilot test. No long-term contracts. No upfront retainers. Just 14 days to prove we can deliver measurable results. If we don't, you get your money back. Trust is earned through transparency and results, not promises.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I know the leads aren't fake or bots?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        We implement a three-layer verification system: (1) Facebook's fraud detection filters, (2) our custom bot detection algorithm, and (3) manual spot-checks on lead quality. You'll see the filtering results in your dashboard. Plus, we track conversion rate to sale—if leads aren't converting, we investigate immediately because that's the metric that actually matters.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What's the minimum ad budget I need?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        For the pilot test, $300-500 in ad spend over 14 days. For ongoing campaigns, we recommend $500-1,500/month minimum to gather statistically significant data. If your budget is lower, we'll be honest about whether we can deliver meaningful results—because testing with $100/month usually just wastes your time and money.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you guarantee a specific ROAS or number of leads?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        No, and anyone who does is lying. ROAS depends on your product, pricing, market, and dozens of variables we can't control. What we guarantee is: (1) full transparency in what we're doing, (2) data-driven decisions based on what's actually working, and (3) a refund if we don't deliver measurable improvement in your pilot test. Results, not promises.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if my ad account gets banned?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        We monitor compliance daily and follow Facebook's policies rigorously. In 18 months, we've maintained a 100% success rate with zero permanent bans. If your account faces restrictions despite our protocols, we'll help you through the appeal process at no extra charge. We also educate you on prevention so you're protected even after we're gone.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I cancel anytime?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        For the Growth Partner plan: yes, 30 days' notice. For the Scale System: there's a 3-month minimum because platform expansion requires longer-term testing. But here's the difference: 94% of our clients stay past 6 months because the ads actually work. When you're making money, canceling doesn't make sense.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you work with businesses in my industry?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        We've managed campaigns for e-commerce, B2B services, local businesses, SaaS, education, and healthcare. During your pilot test, we analyze your specific niche and show you competitor ad strategies that are already working. If we find your market is too saturated or your offer isn't competitive, we'll tell you before taking your money.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What happens after the pilot test?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        You'll receive a detailed report showing: (1) what we tested, (2) performance data for each ad, (3) your best-performing audience and creative, (4) projected results if we scale, and (5) honest recommendation on whether to continue. If results justify it, we'll map out a growth plan. If not, we part ways professionally and you keep all the insights.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee-section">
+        <div class="container">
+            <div class="guarantee-box">
+                <div class="guarantee-icon">🛡️</div>
+                <h3 class="guarantee-title">Our "Results or Refund" Guarantee</h3>
+                <p class="guarantee-text">
+                    If we don't deliver measurable improvement in your ad performance during the 14-day pilot test—better CTR, lower CPL, or higher quality leads than you're currently getting—we'll refund 100% of your pilot fee. No questions, no hassle. We only win when you win, and we're confident enough in our process to put our money where our mouth is.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <h2 class="final-cta-headline">
+                Ready to Stop Gambling and Start Growing?
+            </h2>
+            <p class="final-cta-subtext">
+                Book a free 15-minute strategy call. We'll audit your current ads, show you what's broken, and give you a clear path forward—even if you never hire us.
+            </p>
+            <div class="cta-group">
+                <a href="https://wa.me/yourwhatsappnumber" class="btn btn-primary">Message Us on WhatsApp</a>
+                <a href="https://calendly.com/yourlink" class="btn btn-secondary">Book Strategy Call</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Data-Driven Ads Agency. All rights reserved. | Based in Bangladesh, Serving Global Clients</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Animation Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
+            fadeElements.forEach(el => observer.observe(el));
+        });
+
+        // Enhanced FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const answer = faqItem.querySelector('.faq-answer');
+                const icon = question.querySelector('.faq-icon');
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all other FAQs
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                        item.querySelector('.faq-answer').classList.remove('active');
+                    }
+                });
+                
+                // Toggle current FAQ
+                if (isActive) {
+                    faqItem.classList.remove('active');
+                    answer.classList.remove('active');
+                } else {
+                    faqItem.classList.add('active');
+                    answer.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Parallax effect for glow orbs
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const orb1 = document.querySelector('.glow-orb-1');
+            const orb2 = document.querySelector('.glow-orb-2');
+            
+            if (orb1 && orb2) {
+                orb1.style.transform = `translate(${scrolled * 0.1}px, ${scrolled * 0.15}px)`;
+                orb2.style.transform = `translate(${-scrolled * 0.1}px, ${-scrolled * 0.15}px)`;
+            }
+        });
+
+        // Add hover effect to stats
+        document.querySelectorAll('.stat-number').forEach(stat => {
+            stat.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            stat.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // Button ripple effect
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+    </script>
+
+    <style>
+        /* Ripple effect styles */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            transform: scale(0);
+            animation: ripple-animation 0.6s ease-out;
+            pointer-events: none;
+        }
+
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    </style>
+</body>
+</html>
