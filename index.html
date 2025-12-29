@@ -62,22 +62,28 @@ body {
         }
 
         .glow-orb-1 {
-            background: #fff;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 50%, transparent 70%);
             top: -200px;
             right: -200px;
-            animation: float 20s ease-in-out infinite;
+            animation: float 20s ease-in-out infinite, pulse 4s ease-in-out infinite;
         }
 
         .glow-orb-2 {
-            background: #fff;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 50%, transparent 70%);
             bottom: -200px;
             left: -200px;
-            animation: float 25s ease-in-out infinite reverse;
+            animation: float 25s ease-in-out infinite reverse, pulse 5s ease-in-out infinite;
         }
 
         @keyframes float {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(100px, 100px); }
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(100px, -50px) scale(1.1); }
+            66% { transform: translate(-50px, 100px) scale(0.9); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.15; }
+            50% { opacity: 0.25; }
         }
 
         section {
@@ -114,6 +120,13 @@ body {
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            animation: gradient-shift 3s ease infinite;
+            background-size: 200% 200%;
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
 
         .deck-copy {
@@ -156,16 +169,18 @@ body {
             font-weight: 600;
             border: none;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-decoration: none;
             display: inline-block;
             position: relative;
             overflow: hidden;
+            border-radius: 4px;
         }
 
         .btn-primary {
             background: #fff;
             color: #000;
+            box-shadow: 0 4px 15px rgba(255,255,255,0.2);
         }
 
         .btn-primary::before {
@@ -175,8 +190,8 @@ body {
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.6s;
         }
 
         .btn-primary:hover::before {
@@ -184,20 +199,41 @@ body {
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255,255,255,0.3);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(255,255,255,0.4);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-1px) scale(0.98);
         }
 
         .btn-secondary {
             background: transparent;
             color: #fff;
             border: 2px solid #fff;
+            box-shadow: 0 0 20px rgba(255,255,255,0.1);
+        }
+
+        .btn-secondary::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: #fff;
+            transition: width 0.4s ease;
+            z-index: -1;
+        }
+
+        .btn-secondary:hover::after {
+            width: 100%;
         }
 
         .btn-secondary:hover {
-            background: #fff;
             color: #000;
-            transform: translateY(-2px);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(255,255,255,0.3);
         }
 
         /* Shocking Statement Section */
@@ -216,6 +252,18 @@ body {
             border: 1px solid #333;
             background: rgba(255,255,255,0.02);
             position: relative;
+            animation: border-glow 3s ease-in-out infinite;
+        }
+
+        @keyframes border-glow {
+            0%, 100% { 
+                border-color: #333;
+                box-shadow: 0 0 20px rgba(255,255,255,0.05);
+            }
+            50% { 
+                border-color: #666;
+                box-shadow: 0 0 40px rgba(255,255,255,0.15);
+            }
         }
 
         .shocking-box::before {
@@ -227,6 +275,12 @@ body {
             font-size: 50px;
             background: #000;
             padding: 0 20px;
+            animation: warning-pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes warning-pulse {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.1); }
         }
 
         .shocking-headline {
@@ -278,18 +332,41 @@ body {
             background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
             border: 1px solid #222;
             padding: 40px;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .problem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+            transition: left 0.6s;
+        }
+
+        .problem-card:hover::before {
+            left: 100%;
         }
 
         .problem-card:hover {
             border-color: #fff;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(255,255,255,0.1);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 50px rgba(255,255,255,0.15);
         }
 
         .problem-icon {
             font-size: 40px;
             margin-bottom: 20px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .problem-card:hover .problem-icon {
+            transform: scale(1.2) rotate(5deg);
         }
 
         .problem-title {
@@ -319,12 +396,30 @@ body {
             border-left: 4px solid #444;
             padding: 30px;
             margin-bottom: 20px;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .consequence-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 0;
+            background: #fff;
+            transition: height 0.4s ease;
+        }
+
+        .consequence-item:hover::before {
+            height: 100%;
         }
 
         .consequence-item:hover {
             border-left-color: #fff;
-            background: rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.08);
+            transform: translateX(10px);
+            box-shadow: -5px 0 20px rgba(255,255,255,0.1);
         }
 
         .consequence-title {
@@ -377,12 +472,33 @@ body {
             border: 1px solid #333;
             padding: 40px 30px;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pillar::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+            border-radius: 50%;
+        }
+
+        .pillar:hover::after {
+            width: 300px;
+            height: 300px;
         }
 
         .pillar:hover {
             border-color: #fff;
-            transform: scale(1.05);
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 60px rgba(255,255,255,0.2);
         }
 
         .pillar-number {
@@ -390,6 +506,14 @@ body {
             font-weight: 800;
             color: #222;
             margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .pillar:hover .pillar-number {
+            color: #444;
+            transform: scale(1.1);
         }
 
         .pillar-title {
@@ -564,13 +688,15 @@ body {
             border: 2px solid #222;
             padding: 50px 40px;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
+            border-radius: 8px;
         }
 
         .pricing-card.featured {
             border-color: #fff;
             transform: scale(1.05);
+            box-shadow: 0 20px 60px rgba(255,255,255,0.2);
         }
 
         .pricing-badge {
@@ -584,11 +710,20 @@ body {
             font-size: 12px;
             font-weight: 700;
             letter-spacing: 1px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(255,255,255,0.3);
+            animation: badge-float 2s ease-in-out infinite;
+        }
+
+        @keyframes badge-float {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-5px); }
         }
 
         .pricing-card:hover {
             border-color: #fff;
-            transform: translateY(-10px);
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 25px 70px rgba(255,255,255,0.25);
         }
 
         .pricing-title {
@@ -601,6 +736,10 @@ body {
             font-size: 48px;
             font-weight: 800;
             margin: 20px 0;
+            background: linear-gradient(135deg, #fff 0%, #aaa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .pricing-period {
@@ -655,22 +794,38 @@ body {
             justify-content: space-between;
             align-items: center;
             transition: all 0.3s ease;
+            user-select: none;
         }
 
         .faq-question:hover {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.08);
+            padding-left: 35px;
         }
 
         .faq-answer {
-            padding: 0 30px 25px;
+            max-height: 0;
+            padding: 0 30px;
             color: #888;
             line-height: 1.7;
             font-size: 16px;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+            padding: 20px 30px 25px;
         }
 
         .faq-icon {
             font-size: 24px;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, color 0.3s ease;
+            font-weight: 300;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+            color: #fff;
         }
 
         /* Guarantee Section */
@@ -733,6 +888,23 @@ body {
             padding: 40px 0;
             text-align: center;
             color: #555;
+        }
+
+        /* Ripple effect styles */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            transform: scale(0);
+            animation: ripple-animation 0.6s ease-out;
+            pointer-events: none;
+        }
+
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
         }
 
         /* Responsive */
@@ -1086,51 +1258,6 @@ body {
         </div>
     </section>
 
-    <!-- Proof Section --
-    <section class="proof-section">
-        <div class="container">
-            <h2 class="section-title">Real Results from Real Businesses (Not Cherry-Picked Screenshots)</h2>
-            
-            <div class="results-grid">
-                <div class="result-card">
-                    <div class="result-metric">12.4x ROAS</div>
-                    <div class="result-description">E-commerce brand went from $3,200/month in losses to $39,680 in profit in 67 days using our AI-driven creative testing system</div>
-                    <div class="result-client">— Fashion Retailer, Dhaka</div>
-                </div>
-
-                <div class="result-card">
-                    <div class="result-metric">$4.20 CPL</div>
-                    <div class="result-description">B2B service company reduced cost per lead from $14.50 to $4.20 while tripling lead quality through our filtering protocol</div>
-                    <div class="result-client">— SaaS Company, Global</div>
-                </div>
-
-                <div class="result-card">
-                    <div class="result-metric">247% Growth</div>
-                    <div class="result-description">Local service business scaled from 8 leads/day to 28 leads/day in 45 days without increasing ad spend by a single taka</div>
-                    <div class="result-client">— Home Services, Bangladesh</div>
-                </div>
-
-                <div class="result-card">
-                    <div class="result-metric">0 Bans</div>
-                    <div class="result-description">Protected 127 ad accounts from restrictions over 18 months using our compliance monitoring system—100% success rate</div>
-                    <div class="result-client">— All Clients Combined</div>
-                </div>
-
-                <div class="result-card">
-                    <div class="result-metric">38 Days</div>
-                    <div class="result-description">Average time to profitability for new clients—vs. the industry average of 90+ days of "testing" (aka losing money)</div>
-                    <div class="result-client">— Agency Average, 2024</div>
-                </div>
-
-                <div class="result-card">
-                    <div class="result-metric">94% Stay</div>
-                    <div class="result-description">Client retention rate after 6 months—because when ads actually work, people don't leave</div>
-                    <div class="result-client">— Verified by Third-Party Audit</div>
-                </div>
-            </div>
-        </div>
-    </section> >
-
     <!-- Pricing Section -->
     <section class="pricing-section" id="pricing">
         <div class="container">
@@ -1215,7 +1342,7 @@ body {
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        Pilot test-এর জন্য, ৩০  দিনের মধ্যে ৳30000-৳50000 ad spend করার পরামর্শ দিচ্ছি। আর ongoing campaigns-এর ক্ষেত্রে, statistically significant data কালেক্ট করার জন্য আমরা মাসে অন্তত ৳50000-৳1,50000 minimum budget রেকমেন্ড করি। যদি আপনার বাজেট এর চেয়ে কম হয়, তবে আমরা honestly বলে দেব যে আমরা আসলে কোনো meaningful results দিতে পারব কি না—কারণ মাসে মাত্র ৳10000 দিয়ে testing করা মানে সাধারণত আপনার সময় এবং টাকা দুটাই নষ্ট করা।
+                        Pilot test-এর জন্য, ৩০  দিনের মধ্যে ৳30000-৳50000 ad spend করার পরামর্শ দিচ্ছি। আর ongoing campaigns-এর ক্ষেত্রে, statistically significant data কালেক্ট করার জন্য আমরা মাসে অন্তত ৳50000-৳1,50000 minimum budget রেকমেন্ড করি। যদি আপনার বাজেট এর চেয়ে কম হয়, তবে আমরা honestly বলে দেব যে আমরা আসলে কোনো meaningful results দিতে পারব কি না—কারণ মাসে মাত্র ৳10000 দিয়ে testing করা মানে সাধারণত আপনার সময় এবং টাকা দুটাই নষ্ট করা।
                     </div>
                 </div>
 
@@ -1305,20 +1432,49 @@ body {
     </footer>
 
     <script>
-        // FAQ Accordion
+        // Scroll Animation Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
+            fadeElements.forEach(el => observer.observe(el));
+        });
+
+        // Enhanced FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const faqItem = question.parentElement;
                 const answer = faqItem.querySelector('.faq-answer');
                 const icon = question.querySelector('.faq-icon');
+                const isActive = faqItem.classList.contains('active');
                 
-                // Toggle display
-                if (answer.style.display === 'block') {
-                    answer.style.display = 'none';
-                    icon.textContent = '+';
+                // Close all other FAQs
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                        item.querySelector('.faq-answer').classList.remove('active');
+                    }
+                });
+                
+                // Toggle current FAQ
+                if (isActive) {
+                    faqItem.classList.remove('active');
+                    answer.classList.remove('active');
                 } else {
-                    answer.style.display = 'block';
-                    icon.textContent = '−';
+                    faqItem.classList.add('active');
+                    answer.classList.add('active');
                 }
             });
         });
@@ -1336,6 +1492,69 @@ body {
                 }
             });
         });
+
+        // Parallax effect for glow orbs
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const orb1 = document.querySelector('.glow-orb-1');
+            const orb2 = document.querySelector('.glow-orb-2');
+            
+            if (orb1 && orb2) {
+                orb1.style.transform = `translate(${scrolled * 0.1}px, ${scrolled * 0.15}px)`;
+                orb2.style.transform = `translate(${-scrolled * 0.1}px, ${-scrolled * 0.15}px)`;
+            }
+        });
+
+        // Add hover effect to stats
+        document.querySelectorAll('.stat-number').forEach(stat => {
+            stat.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            stat.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // Button ripple effect
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
     </script>
+
+    <style>
+        /* Ripple effect styles */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            transform: scale(0);
+            animation: ripple-animation 0.6s ease-out;
+            pointer-events: none;
+        }
+
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    </style>
 </body>
 </html>
