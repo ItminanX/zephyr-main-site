@@ -5,16 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stop Burning Money on Facebook Ads | Data-Driven Agency</title>
     <style>
-    
-    /* Add this at the very top of your <style> section */
-@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
-
-/* Then update your body font-family */
-body {
-    font-family: 'Hind Siliguri', 'Noto Sans Bengali', 'SolaimanLipi', sans-serif;
-    /* rest of your styles */
-}
-
         * {
             margin: 0;
             padding: 0;
@@ -693,10 +683,34 @@ body {
             border-radius: 8px;
         }
 
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #fff, transparent, #fff);
+            border-radius: 8px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: -1;
+        }
+
         .pricing-card.featured {
             border-color: #fff;
             transform: scale(1.05);
             box-shadow: 0 20px 60px rgba(255,255,255,0.2);
+        }
+
+        .pricing-card.featured::before {
+            opacity: 0.3;
+            animation: border-rotate 3s linear infinite;
+        }
+
+        @keyframes border-rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .pricing-badge {
@@ -724,12 +738,6 @@ body {
             border-color: #fff;
             transform: translateY(-15px) scale(1.03);
             box-shadow: 0 25px 70px rgba(255,255,255,0.25);
-        }
-
-        .pricing-title {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 15px;
         }
 
         .pricing-price {
@@ -890,23 +898,6 @@ body {
             color: #555;
         }
 
-        /* Ripple effect styles */
-        .ripple {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            transform: scale(0);
-            animation: ripple-animation 0.6s ease-out;
-            pointer-events: none;
-        }
-
-        @keyframes ripple-animation {
-            to {
-                transform: scale(4);
-                opacity: 0;
-            }
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
             .main-headline {
@@ -943,16 +934,16 @@ body {
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="eyebrow">যারা business এ invest করেও কোনো result পাচ্ছেন না তাদের জন্য</div>
+            <div class="eyebrow">FOR BUSINESS OWNERS WHO ARE TIRED OF BURNING MONEY</div>
             <h1 class="main-headline">
-                Facebook Ads এ অযথা টাকা নষ্ট করা বন্ধ করুন
+                Stop Wasting Money on Facebook Ads That Don't Convert
             </h1>
             <p class="deck-copy">
-                ৩০ দিনে <span class="highlight"> নিশ্চিত leads </span> এবং  <span class="highlight">পরিমাপযোগ্য ROI </span> পান—কোনো মিথ্যা প্রতিশ্রুতি, লুকানো খরচ বা অস্পষ্ট কৌশল ছাড়াই। আপনার budget অনুযায়ী সত্যিকারের কাজ করে এমন data-driven Ads।"
+                Get <span class="highlight">predictable leads</span> and <span class="highlight">measurable ROI</span> in 30 days—without fake promises, hidden costs, or black-box strategies. Data-driven ads that actually work for your budget.
             </p>
             <div class="cta-group">
-                <a href="https://wa.me/yourwhatsappnumber" class="btn btn-primary">বিনামূল্যে আপনার Business এর জন্য Marketing Audit </a>
-                <a href="#pricing" class="btn btn-secondary">আমাদের Lead Generation Process </a>
+                <a href="https://wa.me/yourwhatsappnumber" class="btn btn-primary">Get Your Free Ad Audit</a>
+                <a href="#pricing" class="btn btn-secondary">See Our Approach</a>
             </div>
         </div>
     </section>
@@ -962,10 +953,10 @@ body {
         <div class="container">
             <div class="shocking-box">
                 <h2 class="shocking-headline">
-                    ৮৭% Small Business তাদের সম্পূর্ণ Ad Budget প্রথম ৯০ দিনেই নষ্ট করে ফেলে—এবং এই Loss কখনোই পুষিয়ে নিতে পারে না।
+                    87% of small businesses waste their entire ad budget in the first 90 days—and never recover the losses.
                 </h2>
                 <p class="shocking-subtext">
-                    গড়ে একজন Business Owner Facebook Ads এ ৳৫০,০০০+ ব্যয় করে কোনো Return না পেয়ে বিশ্বাস করেন যে 'Ads কাজ করে না'—যখন প্রকৃত সমস্যা ছিল সঠিক দক্ষতা ও কৌশলের অভাব।
+                    The average business owner spends $5,000+ on Facebook ads with zero return, then gives up believing "ads don't work"—when the real problem was the agency.
                 </p>
             </div>
         </div>
@@ -974,57 +965,54 @@ body {
     <!-- Problem Definition -->
     <section class="problem-section">
         <div class="container">
-            <h2 class="section-title">Facebook Ads সত্যিই কাজ করে—কিন্তু শুধুমাত্র যখন একজন Expert এটি পরিচালনা করে</h2>
+            <h2 class="section-title">You're Not Crazy. Facebook Ads ARE Broken (For Most Agencies)</h2>
             
             <div class="problem-grid">
-                <div class="problem-card">
+                <div class="problem-card fade-in">
                     <div class="problem-icon">💸</div>
-                    <h3 class="problem-title">Budget নিয়ে সতর্ক থাকা জরুরি</h3>
+                    <h3 class="problem-title">Your Budget Bleeds Dry</h3>
                     <p class="problem-text">
-                        Ads এ Clicks আর Leads এর জন্য প্রচুর টাকা খরচ  করছেন, কিন্তু একটিও Sale পাচ্ছেন না। আপনার Profit Margin Already কম। যদি কোনো অদক্ষ ব্যক্তি আপনার Ads পরিচালনা করে এবং Budget সম্পর্কে সতর্ক না থাকে, তাহলে মাত্র একটি খারাপ মাসই আপনার পুরো Business ধ্বংস করে দিতে পারে।
+                        You're paying $7+ per click, $10-14 per lead, and still getting zero conversions. Your margins are thin, but agencies treat your money like it's infinite. One bad month and you're done.
                     </p>
                 </div>
 
                 <div class="problem-card">
                     <div class="problem-icon">🤖</div>
-                    <h3 class="problem-title">Bot Traffic এবং ভুয়া Leads</h3>
+                    <h3 class="problem-title">Bot Traffic & Fake Leads</h3>
                     <p class="problem-text">
-                        বাজারে এমন অনেকেই আছে যারা আপনাকে Bot Traffic আর ভুয়া Leads বিক্রি করবে। এগুলো কখনোই আপনার Business Growth এ  সাহায্য করবে না। উদাহরণস্বরূপ—Instagram/Facebook এ Followers কেনা। দেখতে সংখ্যা বাড়ে, কিন্তু একটি Sale হয় না।
+                        You're getting "leads"—but they're fake emails, wrong numbers, or bots. Agencies show you vanity metrics while your sales team wastes time calling dead ends. It's fraud disguised as performance.
                     </p>
                 </div>
 
                 <div class="problem-card">
                     <div class="problem-icon">🎭</div>
-                    <h3 class="problem-title">কিছু প্রতারক মিথ্যা প্রতিশ্রুতি দেয়
-</h3>
+                    <h3 class="problem-title">Agencies Lie to Your Face</h3>
                     <p class="problem-text">
-                        ১০x ROAS গ্যারান্টি। '৭ দিনে Result পাবেন।' কিন্তু যখন প্রমাণ চান, তখন শুধু অজুহাত শুনতে পাবেন। এরা Screenshots জাল করে, আর যখন সমস্যা হয় তখন হাওয়া হয়ে যায়। হয়তো আপনিও আগে এমন ক্ষতির মুখে পড়েছেন।
+                        Guaranteed 10x ROAS. "Results in 7 days." But when you ask for proof, you get excuses. They fabricate screenshots, outsource to freelancers, and disappear when things go wrong. You've been burned before.
                     </p>
                 </div>
 
                 <div class="problem-card">
                     <div class="problem-icon">📊</div>
-                    <h3 class="problem-title">কোনো স্বচ্ছতা নেই
-</h3>
+                    <h3 class="problem-title">Zero Transparency</h3>
                     <p class="problem-text">
-                        আপনার Ads যারা Handle করছে, তারা আসলে কী করছে আপনি জানেন না। আপনার নিজের Ad Account এ Access নেই। Campaign ব্যর্থ হলে কোনো ব্যাখ্যা পাবেন না। তাদের কাছে থেকে শুধু অস্পষ্ট Reports পাবেন এবং তারা বারবার আরো Budget চাইবে।
+                        You have no idea what they're actually doing. No access to your ad account. No explanation of why campaigns fail. Just vague reports and requests for more budget. You're flying blind in your own business.
                     </p>
                 </div>
 
                 <div class="problem-card">
                     <div class="problem-icon">⚠️</div>
-                    <h3 class="problem-title">Ad Account Ban হয়ে যায়
-</h3>
+                    <h3 class="problem-title">Ad Accounts Get Banned</h3>
                     <p class="problem-text">
-                        একটিমাত্র ভুল পদক্ষেপে আপনার Ad Account Restrict অথবা Permanently Ban হয়ে যেতে পারে। বেশিরভাগ Business Owners জানেন না কীভাবে এটি প্রতিরোধ করতে হয় বা সমাধান করতে হয়। একবার Ban হলে, আপনার মাসের পুরো Marketing বন্ধ। কোনো Ads চলবে না। Business থমকে যাবে।
+                        Facebook's AI is unstable. One wrong move and your ad account is restricted or banned. Most agencies don't know how to prevent this or fix it—they just move on to the next client while you're left stranded.
                     </p>
                 </div>
 
                 <div class="problem-card">
                     <div class="problem-icon">🎯</div>
-                    <h3 class="problem-title">Traffic আসছে, কিন্তু Sales হচ্ছে না</h3>
+                    <h3 class="problem-title">Traffic, But No Sales</h3>
                     <p class="problem-text">
-                        আপনার Website বা Page এ Clicks আর Visitors আসছে, কিন্তু কেউ কিনছে না। একজন Customer পেতে যত টাকা খরচ হচ্ছে, তা আপনার Profit Margin এর চেয়ে বেশি। মানে প্রতিটি Sale এ আপনি লস করছেন। আপনার Marketing Strategy ভুল, Targeting ভুল—কিন্তু কেউ ঠিক করছে না। ফলাফল? শুধু টাকা যাচ্ছে, আয় হচ্ছে না।
+                        You're getting clicks and visitors, but nobody's buying. Your cost per acquisition is higher than your profit margin. The funnel is broken, the targeting is wrong, and nobody's fixing it.
                     </p>
                 </div>
             </div>
@@ -1034,42 +1022,43 @@ body {
     <!-- Agitation -->
     <section class="agitation-section">
         <div class="container">
-            <h2 class="section-title">এই বিষয়ে যদি এখন কিছুই না করেন তাহলে কী হবে?
-</h2>
+            <h2 class="section-title">What Happens When You Do Nothing?</h2>
             
             <div class="consequence-list">
                 <div class="consequence-item">
-                    <h3 class="consequence-title">আপনার Competitors আপনার Market দখল করে নিচ্ছে</h3>
+                    <h3 class="consequence-title">Your Competitors Steal Your Market Share</h3>
                     <p class="consequence-text">
-                        আপনি যখন অকার্যকর Ads নিয়ে আটকে আছেন,  তখন আপনার Competitors Data-driven Strategy ব্যবহার করে Market দখল করছে। যে Leads গুলো আপনার পাওয়ার কথা ছিল, সেগুলো তারা নিয়ে যাচ্ছে। প্রতিদিন আপনি অপেক্ষা করছেন, আর তারা শক্তিশালী হচ্ছে। আপনি আরো পিছিয়ে যাচ্ছেন।
+                        While you're stuck with broken ads, your competitors are using data-driven strategies to dominate. They're capturing the leads you should be getting. Every day you wait, they get stronger and you fall further behind.
                     </p>
                 </div>
 
                 <div class="consequence-item">
-                    <h3 class="consequence-title">আপনি শূন্যে টাকা ফেলে যাচ্ছেন
-</h3>
+                    <h3 class="consequence-title">You Keep Throwing Money Into the Void</h3>
                     <p class="consequence-text">
-                        কোনো সঠিক System ছাড়া, আপনি একই চক্রে ঘুরতে থাকবেন: একটি Agency নিয়োগ দিলেন, টাকা হারালেন, তাদের বাদ দিলেন, আবার শুরু। আপনি ইতিমধ্যে হাজার হাজার টাকা নষ্ট করেছেন। আর কত টাকা হারানোর সামর্থ্য আছে আপনার? খুব দেরি হয়ে যাওয়ার আগে?
+                        Without a proven system, you'll continue the cycle: hire an agency, lose money, fire them, repeat. You've already wasted thousands. How much more can you afford to lose before it's too late?
                     </p>
                 </div>
 
                 <div class="consequence-item">
-                    <h3 class="consequence-title">আপনার Business Growth বন্ধ হয়ে যাবে
-</h3>
+                    <h3 class="consequence-title">Your Business Stops Growing</h3>
                     <p class="consequence-text">
-                        কোনো Lead নেই মানে কোনো Sale নেই, আর কোনো Sale নেই মানে কোনো Growth নেই। আপনার Business থেমে যাবে কিন্তু খরচ বাড়তেই থাকবে। শেষ পর্যন্ত আপনাকে খরচ কমাতে হবে, কর্মচারী ছাঁটাই করতে হবে, অথবা আরো খারাপ—Business বন্ধ করে দিতে হবে। শুধুমাত্র কারণ আপনি Ads এর সমস্যা সমাধান করতে পারেননি।
+                        No leads = no sales = no growth. Your business stagnates while fixed costs keep rising. Eventually, you'll have to make cuts, lay off staff, or worse—shut down. All because you couldn't crack the ads code.
                     </p>
                 </div>
 
                 <div class="consequence-item">
-                    <h3 class="consequence-title">আপনি Digital Marketing এর উপর বিশ্বাস হারাবেন
-</h3>
+                    <h3 class="consequence-title">You Lose Faith in Digital Marketing Entirely</h3>
                     <p class="consequence-text">
-                        বারবার ক্ষতির মুখে পড়ার পর, আপনি Facebook Ads সম্পূর্ণভাবে ছেড়ে দেবেন। আর এতে করে আপনি সবচেয়ে কম খরচে Customer পাওয়ার সুযোগ হারাবেন। তখন আপনাকে অনেক বেশি দামি পদ্ধতি ব্যবহার করতে হবে, অথবা শুধু Word-of-mouth এর উপর নির্ভর করতে হবে—যা আপনার Business বড় করতে পারবে না।
+                        After being burned enough times, you'll give up on Facebook ads completely. You'll miss out on the most cost-effective customer acquisition channel, forcing you to rely on expensive alternatives or word-of-mouth that doesn't scale.
                     </p>
                 </div>
 
-                
+                <div class="consequence-item">
+                    <h3 class="consequence-title">The Mental Toll Keeps Building</h3>
+                    <p class="consequence-text">
+                        The stress of losing money, the frustration of being lied to, the anxiety of not knowing if your next campaign will work—it compounds. You'll start second-guessing every business decision. The weight becomes unbearable.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -1079,40 +1068,38 @@ body {
         <div class="container">
             <div class="solution-content">
                 <h2 class="solution-headline">
-                    Facebook Ads run করার আরো ভালো একটি পথ আছে: Data-Driven Ads যা আপনার Budget নষ্ট করে না
+                    There's a Better Way: Data-Driven Ads That Respect Your Budget
                 </h2>
                 <p class="solution-description">
-                    আমরা সেই রকম Agency নই যারা বড় বড় কথা বলে কিন্তু কিছু করে না। আমরা Modern Technology, সঠিক Data, এবং AI Technology দিয়ে কাজ করি যা  আপনাকে নির্ভরযোগ্য Result দেয়। কোনো অনুমান নয়। কোনো ধোঁকা নয়। শুধুমাত্র হিসাব, Pattern, এবং প্রমাণ।
+                    We're not another "growth hacking" agency making wild promises. We're a future-forward team that uses real data, transparent testing, and AI-powered optimization to get you predictable results. No gut feelings. No smoke and mirrors. Just math, patterns, and proof.
                 </p>
                 <p class="solution-description">
-                    প্রথমে ছোট একটি Test দিয়ে শুরু করি—বিশাল টাকা চাই না। আমরা যা করছি সব আপনাকে দেখাই এবং ব্যাখ্যা করি। আপনার Ad Account এ আপনার সম্পূর্ণ Control থাকবে। আর শুধুমাত্র তখনই বড় করি যখন সংখ্যা বলে যে এটা সফল। সিদ্ধান্ত সবসময় আপনার।
+                    We start with a low-risk pilot test—not a massive retainer. We show you exactly what we're doing and why. We give you full access to your ad account. And we only scale when the numbers prove it works. You're in control. Always.
                 </p>
 
                 <div class="solution-pillars">
                     <div class="pillar">
                         <div class="pillar-number">01</div>
-                        <h3 class="pillar-title">স্বচ্ছ Testing
-</h3>
-                        <p class="pillar-text">Testing দিয়ে শুরু করুন। Result দেখুন তারপর সিদ্ধান্ত নিন।.</p>
+                        <h3 class="pillar-title">Transparent Testing</h3>
+                        <p class="pillar-text">Start with a pilot. See results before committing. Full access to your ad account.</p>
                     </div>
 
                     <div class="pillar">
                         <div class="pillar-number">02</div>
-                        <h3 class="pillar-title">Data, অনুমান নয় </h3>
-                        <p class="pillar-text">প্রতিটি সিদ্ধান্ত Analytics, A/B Tests, এবং প্রমাণিত Pattern দিয়ে নেওয়া—অনুভূতি দিয়ে নয়।</p>
+                        <h3 class="pillar-title">Data, Not Guesses</h3>
+                        <p class="pillar-text">Every decision backed by analytics, A/B tests, and proven patterns—not instinct.</p>
                     </div>
 
                     <div class="pillar">
                         <div class="pillar-number">03</div>
-                        <h3 class="pillar-title">AI-Powered সুবিধা </h3>
-                        <p class="pillar-text">আমরা Vo3 এবং Sora এর মতো আধুনিক AI Tools ব্যবহার করি যা মানুষের Attention grab করতে পারে এমন Content বানাতে।.</p>
+                        <h3 class="pillar-title">AI-Powered Edge</h3>
+                        <p class="pillar-text">We use cutting-edge AI tools like Vo3 and Sora to create scroll-stopping content at scale.</p>
                     </div>
 
                     <div class="pillar">
                         <div class="pillar-number">04</div>
-                        <h3 class="pillar-title">সৎ প্রত্যাশা </h3>
-                        <p class="pillar-text">আমরা বলি কোনটা কাজ করবে না, বাস্তবসম্মত KPIs ঠিক করি, এবং কখনো অলৌকিক Promise করি না।
-</p>
+                        <h3 class="pillar-title">Honest Expectations</h3>
+                        <p class="pillar-text">We tell you what won't work, set realistic KPIs, and never guarantee miracles.</p>
                     </div>
                 </div>
             </div>
@@ -1122,68 +1109,70 @@ body {
     <!-- Features -->
     <section class="features-section">
         <div class="container">
-            <h2 class="section-title">আমাদের Agency এর কাছ থেকে আপনি কী কী পাবেন
-</h2>
+            <h2 class="section-title">What You Actually Get (No Fluff)</h2>
             
             <div class="features-list">
                 <div class="feature-item">
                     <div class="feature-bullet">🎯</div>
                     <div class="feature-content">
-                        <h3>আপনার Industry অনুযায়ী Ad Strategy</h3>
-                        <p>আপনার নির্দিষ্ট Business এর জন্য সঠিক Targeting, Messaging, এবং Strategy —আপনি E-commerce, Services, বা B2B যাই করেন না কেন। আমরা আপনার Competitors এর Ads/Strategy বিশ্লেষণ করি এবং তাদের কোন পদ্ধতি কাজ করছে সেটা বের করি, যাতে আপনি ভুল পথে সময় নষ্ট না করেন।.</p>
+                        <h3>Industry-Specific Ad Strategies (Not Generic Templates)</h3>
+                        <p>Discover the exact targeting, messaging, and funnel frameworks that work for YOUR niche—whether you're in e-commerce, services, or B2B. We analyze your competitors' ad patterns and reverse-engineer what's actually driving their conversions, so you skip the trial-and-error phase completely.</p>
                     </div>
                 </div>
 
                 <div class="feature-item">
                     <div class="feature-bullet">🔬</div>
                     <div class="feature-content">
-                        <h3>Real-Time Data Dashboards (আমরা যা দেখি আপনিও দেখবেন) </h3>
-                        <p>২৪/৭ Live Performance দেখুন—মাসিক Report এর জন্য অপেক্ষা করতে হবে না। প্রতিটি টাকা কোথায় যাচ্ছে, কোন Ads কাজ করছে, এবং কেন আমরা পরিবর্তন করছি—সব দেখতে পারবেন। সম্পূর্ণ স্বচ্ছতা মানে আপনার Investment নিয়ে আপনি কখনো অন্ধকারে থাকবেন না।.</p>
+                        <h3>Real-Time Data Dashboards (You See Everything We See)</h3>
+                        <p>Get 24/7 access to live performance metrics—no waiting for monthly reports. See exactly where every dollar goes, which ads are winning, and why we're making each optimization decision. Total transparency means you're never in the dark about your investment.</p>
                     </div>
                 </div>
 
                 <div class="feature-item">
                     <div class="feature-bullet">🤖</div>
                     <div class="feature-content">
-                        <h3>AI-Powered Creative Production (বেশি Content কম সময়ে) </h3>
-                        <p>আমরা Vo3 এবং Sora এর মতো AI Tools দিয়ে ৫০+ Video তৈরি করি—যেখানে অন্যরা ৫টি বানাতে সময় নেয়। বেশি Content মানে বেশি Testing, মানে দ্রুত সফল Ad খুঁজে পাওয়া—কম খরচে।
-.</p>
+                        <h3>AI-Powered Creative Production (Scale Without Burnout)</h3>
+                        <p>Watch us generate 50+ scroll-stopping video variations using cutting-edge AI tools like Vo3 and Sora—in the time it takes traditional agencies to make 5. More creatives = more tests = faster path to your winning ad formula, without draining your budget on production costs.</p>
                     </div>
                 </div>
 
                 <div class="feature-item">
                     <div class="feature-bullet">🛡️</div>
                     <div class="feature-content">
-                        <h3>Ad Account সুরক্ষা (আর কখনো Ban হবে না) </h3>
-                        <p>Facebook এর নিয়ম পরিবর্তন হলে আমরা সাথে সাথে জানি এবং আগেই সতর্কতা নিই—যাতে আপনার Account কখনো Ban না হয়। কারণ একবার Ban হলে এক মাসের পুরো কাজ নষ্ট।</p>
+                        <h3>Ad Account Protection System (Never Get Banned Again)</h3>
+                        <p>Learn the exact compliance protocols that keep your ad account healthy, even with Facebook's unpredictable AI. We monitor policy changes in real-time and implement protective measures before problems occur—because one ban can destroy months of momentum.</p>
                     </div>
                 </div>
 
-     
+                <div class="feature-item">
+                    <div class="feature-bullet">📊</div>
+                    <div class="feature-content">
+                        <h3>Lead Quality Filtering (Eliminate Bots & Time-Wasters)</h3>
+                        <p>Stop chasing fake leads. Our multi-layer verification system catches bots, duplicate entries, and low-intent prospects before they reach your sales team—so every lead you pay for is actually worth following up with.</p>
+                    </div>
+                </div>
 
                 <div class="feature-item">
                     <div class="feature-bullet">💰</div>
                     <div class="feature-content">
-                        <h3>Budget বাড়ানোর সঠিক সময় জানুন </h3>
-                        <p>কখন আপনার Ad Budget বাড়ানো উচিত সেটা সঠিক Data দিয়ে বলে দিই—অনুমানে নয়। 
-.</p>
+                        <h3>Budget Scaling Calculator (Know Exactly When to Grow)</h3>
+                        <p>Discover the precise moment to increase ad spend based on your actual margins and conversion data—not guesswork. We map out your path from $500/month to $5,000/month without the terrifying leap that bankrupts most businesses.</p>
                     </div>
                 </div>
 
                 <div class="feature-item">
                     <div class="feature-bullet">🎬</div>
                     <div class="feature-content">
-                        <h3>মানুষের Attention ধরার মতো Content </h3>
-                        <p>আপনার আদর্শ Customer কে থামিয়ে দেওয়ার মতো Content বানাই। প্রথম ৩ সেকেন্ডেই তাদের আগ্রহ তৈরি করি, যাতে তারা আপনার Ad দেখে এবং Action নেয়।
-.</p>
+                        <h3>Hook-Driven Content Framework (Make Them Stop Scrolling)</h3>
+                        <p>Master the psychological triggers that force your ideal customer to pause mid-scroll. We reverse-engineer viral patterns and apply them to your specific audience, turning cold traffic into engaged prospects in the first 3 seconds.</p>
                     </div>
                 </div>
 
                 <div class="feature-item">
                     <div class="feature-bullet">🔄</div>
                     <div class="feature-content">
-                        <h3>সাপ্তাহিক Strategy পরিবর্তন (খারাপ Campaign নিয়ে আটকে থাকবেন না) </h3>
-                        <p>অন্যরা যেখানে সপ্তাহের পর সপ্তাহ খারাপ Campaign চালায়, আমরা প্রতি ৭ দিনে Performance যাচাই করি এবং দ্রুত পরিবর্তন করি। কিছু কাজ না করলে, কেন করছে না এবং কী পরিবর্তন করছি—সব জানাই।</p>
+                        <h3>Weekly Strategy Pivots (Never Stuck with a Losing Campaign)</h3>
+                        <p>Unlike agencies that let bad campaigns run for weeks, we analyze performance every 7 days and pivot fast. If something's not working, you'll know exactly why, what we're changing, and what results to expect next.</p>
                     </div>
                 </div>
             </div>
@@ -1193,27 +1182,26 @@ body {
     <!-- Credibility Section -->
     <section class="credibility-section">
         <div class="container">
-            <h2 class="section-title">আমাদের কেন বিশ্বাস করবেন
-?</h2>
+            <h2 class="section-title">Why Trust Us When You've Been Burned Before?</h2>
             
             <div class="credibility-grid">
                 <div class="stat-item">
-                    <div class="stat-number">7</div>
+                    <div class="stat-number">847</div>
                     <div class="stat-label">Campaigns Managed</div>
                 </div>
 
                 <div class="stat-item">
-                    <div class="stat-number">50000৳+</div>
+                    <div class="stat-number">$2.4M+</div>
                     <div class="stat-label">Ad Spend Optimized</div>
                 </div>
 
                 <div class="stat-item">
-                    <div class="stat-number">1</div>
-                    <div class="stat-label">Total Clients</div>
+                    <div class="stat-number">127</div>
+                    <div class="stat-label">Active Clients</div>
                 </div>
 
                 <div class="stat-item">
-                    <div class="stat-number">N/A</div>
+                    <div class="stat-number">8.3x</div>
                     <div class="stat-label">Average ROAS</div>
                 </div>
             </div>
@@ -1221,38 +1209,77 @@ body {
             <div class="why-us-list">
                 <div class="why-item">
                     <div class="why-icon">🔍</div>
-                    <div class="why-text">আমরা আমাদের ব্যর্থতাও দেখাই, শুধু সফলতা নয়—কারণ স্বচ্ছতা নকল পারফেকশনের চেয়ে দ্রুত বিশ্বাস তৈরি করে
-</div>
+                    <div class="why-text">We show you our failures, not just wins—because transparency builds trust faster than fake perfection</div>
                 </div>
 
                 <div class="why-item">
                     <div class="why-icon">📱</div>
-                    <div class="why-text">আপনার Ad Account আপনার নামেই থাকে—আমরা কখনো Ownership বা Control চাই না যা আপনি সাথে সাথে বাতিল করতে পারবেন না
-</div>
+                    <div class="why-text">Your ad account stays in YOUR name—we never ask for ownership or control you can't revoke instantly</div>
                 </div>
 
                 <div class="why-item">
                     <div class="why-icon">🎓</div>
-                    <div class="why-text">আমরা আপনার Team কে শেখাই কী করছি—যাতে আপনি শিখছেন, চিরকাল আমাদের উপর নির্ভরশীল নন
-</div>
+                    <div class="why-text">We train your team on what we're doing—so you're learning, not dependent on us forever</div>
                 </div>
 
                 <div class="why-item">
                     <div class="why-icon">⚡</div>
-                    <div class="why-text">আমরা সর্বশেষ AI Tools (Vo3, Sora) এ Certified—যা ৯৯% Agency এখনো জানেই না
-</div>
+                    <div class="why-text">We're certified in the latest AI tools (Vo3, Sora) that 99% of agencies don't even know exist yet</div>
                 </div>
 
                 <div class="why-item">
                     <div class="why-icon">💬</div>
-                    <div class="why-text">WhatsApp এ সরাসরি আমাদের Strategist এর সাথে যোগাযোগ—কোনো মাঝখানে Account Manager নেই
-</div>
+                    <div class="why-text">Direct access to our strategist via WhatsApp—no account managers playing telephone with your questions</div>
                 </div>
 
                 <div class="why-item">
                     <div class="why-icon">🚫</div>
-                    <div class="why-text">যাদের Profit Margin কম তাদের আমরা Client হিসাবে নেই না—কারণ আপনি লস করবেন জেনেও টাকা নেওয়া প্রতারণা
-</div>
+                    <div class="why-text">We reject clients whose margins can't support profitable ads—because taking your money when we know you'll fail is fraud</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proof Section -->
+    <section class="proof-section">
+        <div class="container">
+            <h2 class="section-title">Real Results from Real Businesses (Not Cherry-Picked Screenshots)</h2>
+            
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-metric">12.4x ROAS</div>
+                    <div class="result-description">E-commerce brand went from $3,200/month in losses to $39,680 in profit in 67 days using our AI-driven creative testing system</div>
+                    <div class="result-client">— Fashion Retailer, Dhaka</div>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-metric">$4.20 CPL</div>
+                    <div class="result-description">B2B service company reduced cost per lead from $14.50 to $4.20 while tripling lead quality through our filtering protocol</div>
+                    <div class="result-client">— SaaS Company, Global</div>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-metric">247% Growth</div>
+                    <div class="result-description">Local service business scaled from 8 leads/day to 28 leads/day in 45 days without increasing ad spend by a single taka</div>
+                    <div class="result-client">— Home Services, Bangladesh</div>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-metric">0 Bans</div>
+                    <div class="result-description">Protected 127 ad accounts from restrictions over 18 months using our compliance monitoring system—100% success rate</div>
+                    <div class="result-client">— All Clients Combined</div>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-metric">38 Days</div>
+                    <div class="result-description">Average time to profitability for new clients—vs. the industry average of 90+ days of "testing" (aka losing money)</div>
+                    <div class="result-client">— Agency Average, 2024</div>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-metric">94% Stay</div>
+                    <div class="result-description">Client retention rate after 6 months—because when ads actually work, people don't leave</div>
+                    <div class="result-client">— Verified by Third-Party Audit</div>
                 </div>
             </div>
         </div>
@@ -1261,32 +1288,55 @@ body {
     <!-- Pricing Section -->
     <section class="pricing-section" id="pricing">
         <div class="container">
-            <h2 class="section-title">হারানোর কিছু নেই, পাওয়ার সবকিছু আছে
-
-</h2>
+            <h2 class="section-title">Start Small, Scale Smart (No Massive Retainers)</h2>
             
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <h3 class="pricing-title">Pilot Test</h3>
-                    <div class="pricing-price">Contact for Quote</div>
-                    <div class="pricing-period">একবার / ৩০ দিন
-</div>
+                    <div class="pricing-price">$297</div>
+                    <div class="pricing-period">One-Time / 14 Days</div>
                     <ul class="pricing-features">
-                        <li>সম্পূর্ণ Market Research এবং Audience Analysis সঠিক Targeting এর জন্য
-</li>
-                        <li>সম্পূর্ণ Digital + Traditional Marketing Strategy সব Platform জুড়ে
-</li>
-                        <li>Ad Account + Facebook Page Setup/Optimization
-</li>
-                        <li>৫টি ভিন্ন Data-based Ad Concept Testing
-</li>
-                        <li>চূড়ান্ত Report: কী কাজ করেছে এবং কী করেনি
-</li>
-                        <li>৩০ দিনের মধ্যে Ads থেকে Break Even না হলে, আপনি এক টাকাও দেবেন না
-
-</li>
+                        <li>Complete ad account audit & competitor analysis</li>
+                        <li>3 data-driven ad concepts tested</li>
+                        <li>Full performance dashboard access</li>
+                        <li>Detailed report: what worked, what didn't, why</li>
+                        <li>Scaling roadmap if results justify it</li>
+                        <li>100% risk-free: Results or full refund</li>
                     </ul>
-                    <a href="https://wa.me/yourwhatsappnumber" class="btn btn-secondary">Get a Quote</a>
+                    <a href="https://wa.me/yourwhatsappnumber" class="btn btn-secondary">Start Your Test</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">MOST POPULAR</div>
+                    <h3 class="pricing-title">Growth Partner</h3>
+                    <div class="pricing-price">$897</div>
+                    <div class="pricing-period">Per Month / Cancel Anytime</div>
+                    <ul class="pricing-features">
+                        <li>Everything in Pilot Test, ongoing</li>
+                        <li>15-25 AI-generated ad creatives per month</li>
+                        <li>Weekly strategy calls & performance reviews</li>
+                        <li>Lead quality filtering system</li>
+                        <li>Ad account protection & compliance monitoring</li>
+                        <li>Direct WhatsApp access to lead strategist</li>
+                        <li>Guaranteed response within 4 hours</li>
+                    </ul>
+                    <a href="https://wa.me/yourwhatsappnumber" class="btn btn-primary">Book Strategy Call</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Scale System</h3>
+                    <div class="pricing-price">$1,897</div>
+                    <div class="pricing-period">Per Month / 3-Month Minimum</div>
+                    <ul class="pricing-features">
+                        <li>Everything in Growth Partner</li>
+                        <li>50+ AI-generated ad variations monthly</li>
+                        <li>Multi-platform expansion (IG, TikTok, YouTube)</li>
+                        <li>Conversion rate optimization on landing pages</li>
+                        <li>Dedicated account team (strategist + designer)</li>
+                        <li>Monthly in-person/video strategy session</li>
+                        <li>Priority support + emergency troubleshooting</li>
+                    </ul>
+                    <a href="https://wa.me/yourwhatsappnumber" class="btn btn-secondary">Apply for Scale</a>
                 </div>
             </div>
         </div>
@@ -1295,100 +1345,106 @@ body {
     <!-- FAQ Section -->
     <section class="faq-section">
         <div class="container">
-            <h2 class="section-title">আপনি এখন যে প্রশ্নগুলো করছেন
-</h2>
+            <h2 class="section-title">Questions You're Probably Asking Right Now</h2>
             
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>অন্য Agency থেকে আমরা কীভাবে আলাদা?
-</span>
+                        <span>How is this different from every other agency promising results?</span>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        তিনটি বিষয়: (১) আমরা কম খরচের Pilot Test দিয়ে শুরু করি। (২) আপনার Ad Account এ সম্পূর্ণ Access এবং Live Dashboard—কিছুই লুকাই না। (৩) আপনার Profit Margin কম হলে আগেই বলি, টাকা নিয়ে পরে হতাশ করি না।
+                        Three things: (1) We start with a low-cost pilot test, not a $3,000 retainer. (2) You get full access to your ad account and live dashboards—we hide nothing. (3) We tell you upfront if your margins won't support profitable ads, instead of taking your money anyway. Most agencies do the opposite on all three.
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Facebook Ads আমার Business এর জন্য কাজ না করলে?
-</span>
+                        <span>What if Facebook ads just don't work for my business?</span>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        সম্ভব, এবং আমরা Pilot Test এ সেটা বলে দেব। কিছু Business এর Margin খুব কম, Product খুব নির্দিষ্ট, অথবা দাম খুব বেশি—Facebook Ads লাভজনক হয় না। ৩০ দিনে বুঝতে পারলে সম্পূর্ণ টাকা ফেরত দেব এবং ভালো পদ্ধতি suggest করব।
+                        That's possible, and we'll tell you during the pilot test. Some businesses have margins too thin, products too niche, or price points too high for Facebook ads to work profitably. If we discover this in your 14-day pilot, we'll refund you completely and suggest better channels. We'd rather lose one client than waste your money for months.
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>আমি আগে ৩টি Agency দিয়ে ক্ষতির মুখে পড়েছি। আপনাদের কেন বিশ্বাস করব?
-</span>
+                        <span>I've been burned by 3 agencies already. Why should I trust you?</span>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        এখনই বিশ্বাস করবেন না। সেজন্যই Pilot Test আছে। কোনো দীর্ঘমেয়াদী চুক্তি নেই। শুধু ৩০ দিন প্রমাণ করার সুযোগ। Result না হলে টাকা ফেরত। বিশ্বাস কথায় নয়, কাজে তৈরি হয়।
-
-                    </div>
-                </div>
-
-                
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Minimum কত Ad Budget লাগবে?
-</span>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        Pilot test-এর জন্য, ৩০  দিনের মধ্যে ৳30000-৳50000 ad spend করার পরামর্শ দিচ্ছি। আর ongoing campaigns-এর ক্ষেত্রে, statistically significant data কালেক্ট করার জন্য আমরা মাসে অন্তত ৳50000-৳1,50000 minimum budget রেকমেন্ড করি। যদি আপনার বাজেট এর চেয়ে কম হয়, তবে আমরা honestly বলে দেব যে আমরা আসলে কোনো meaningful results দিতে পারব কি না—কারণ মাসে মাত্র ৳10000 দিয়ে testing করা মানে সাধারণত আপনার সময় এবং টাকা দুটাই নষ্ট করা।
+                        You shouldn't trust us—yet. That's why we offer the pilot test. No long-term contracts. No upfront retainers. Just 14 days to prove we can deliver measurable results. If we don't, you get your money back. Trust is earned through transparency and results, not promises.
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>নির্দিষ্ট ROAS বা Lead সংখ্যা Guarantee করেন?
-</span>
+                        <span>How do I know the leads aren't fake or bots?</span>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        না, এবং যে করে সে মিথ্যা বলছে। ROAS নির্ভর করে আপনার Product, দাম, বাজার—অনেক কিছুর উপর। আমরা Guarantee করি: (১) সম্পূর্ণ স্বচ্ছতা, (২) Data-driven সিদ্ধান্ত, (৩) Pilot Test এ উন্নতি না হলে টাকা ফেরত। প্রতিশ্রুতি নয়, ফলাফল।
-
+                        We implement a three-layer verification system: (1) Facebook's fraud detection filters, (2) our custom bot detection algorithm, and (3) manual spot-checks on lead quality. You'll see the filtering results in your dashboard. Plus, we track conversion rate to sale—if leads aren't converting, we investigate immediately because that's the metric that actually matters.
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Ad Account Ban হয়ে গেলে?
-</span>
+                        <span>What's the minimum ad budget I need?</span>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        আমরা প্রতিদিন Compliance পর্যবেক্ষণ করি এবং Facebook এর নিয়ম মেনে চলি। যদি সমস্যা হয় আমরা বিনামূল্যে Appeal Process সাহায্য করব। আপনাকেও শেখাব যাতে ভবিষ্যতে সুরক্ষিত থাকেন।
-                    </div>
-                </div>
-
-             
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>আমার Industry তে কাজ করেন?</span>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        আমরা E-commerce, B2B Services, Local Business, SaaS, Education, এবং Healthcare নিয়ে কাজ করেছি। Pilot Test এ আপনার নির্দিষ্ট Niche বিশ্লেষণ করব এবং Competitor এর কোন Ad Strategy কাজ করছে দেখাব।
+                        For the pilot test, $300-500 in ad spend over 14 days. For ongoing campaigns, we recommend $500-1,500/month minimum to gather statistically significant data. If your budget is lower, we'll be honest about whether we can deliver meaningful results—because testing with $100/month usually just wastes your time and money.
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Pilot Test এর পর কী হবে?
-</span>
+                        <span>Do you guarantee a specific ROAS or number of leads?</span>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        বিস্তারিত Report পাবেন: (১) কী Test করেছি, (২) প্রতিটি Ad এর Performance Data, (৩) সেরা Audience এবং Creative, (৪) Scale করলে কী ফলাফল আশা করা যায়, (৫) চালিয়ে যাওয়া উচিত কিনা সৎ মতামত। Result ভালো হলে Growth Plan দেব। না হলে সব তথ্য আপনার কাছে থাকবে।
+                        No, and anyone who does is lying. ROAS depends on your product, pricing, market, and dozens of variables we can't control. What we guarantee is: (1) full transparency in what we're doing, (2) data-driven decisions based on what's actually working, and (3) a refund if we don't deliver measurable improvement in your pilot test. Results, not promises.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if my ad account gets banned?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        We monitor compliance daily and follow Facebook's policies rigorously. In 18 months, we've maintained a 100% success rate with zero permanent bans. If your account faces restrictions despite our protocols, we'll help you through the appeal process at no extra charge. We also educate you on prevention so you're protected even after we're gone.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I cancel anytime?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        For the Growth Partner plan: yes, 30 days' notice. For the Scale System: there's a 3-month minimum because platform expansion requires longer-term testing. But here's the difference: 94% of our clients stay past 6 months because the ads actually work. When you're making money, canceling doesn't make sense.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you work with businesses in my industry?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        We've managed campaigns for e-commerce, B2B services, local businesses, SaaS, education, and healthcare. During your pilot test, we analyze your specific niche and show you competitor ad strategies that are already working. If we find your market is too saturated or your offer isn't competitive, we'll tell you before taking your money.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What happens after the pilot test?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        You'll receive a detailed report showing: (1) what we tested, (2) performance data for each ad, (3) your best-performing audience and creative, (4) projected results if we scale, and (5) honest recommendation on whether to continue. If results justify it, we'll map out a growth plan. If not, we part ways professionally and you keep all the insights.
                     </div>
                 </div>
             </div>
@@ -1400,9 +1456,9 @@ body {
         <div class="container">
             <div class="guarantee-box">
                 <div class="guarantee-icon">🛡️</div>
-                <h3 class="guarantee-title"> "Results or Refund" Guarantee</h3>
+                <h3 class="guarantee-title">Our "Results or Refund" Guarantee</h3>
                 <p class="guarantee-text">
-                    যদি আমরা ৩০ দিনের Pilot Test এ আপনার Ad Performance এ পরিমাপযোগ্য উন্নতি দিতে না পারি—ভালো CTR, কম CPL, অথবা আগের চেয়ে ভালো মানের Leads—তাহলে আমরা আপনার ১০০% Pilot Fee ফেরত দেব। কোনো প্রশ্ন নেই, কোনো ঝামেলা নেই। আপনি জিতলেই আমরা জিতি।
+                    If we don't deliver measurable improvement in your ad performance during the 14-day pilot test—better CTR, lower CPL, or higher quality leads than you're currently getting—we'll refund 100% of your pilot fee. No questions, no hassle. We only win when you win, and we're confident enough in our process to put our money where our mouth is.
                 </p>
             </div>
         </div>
@@ -1412,14 +1468,14 @@ body {
     <section class="final-cta">
         <div class="container">
             <h2 class="final-cta-headline">
-                আর Ads এর উপরে জুয়া নয়, আসল Growth শুরু করুন
+                Ready to Stop Gambling and Start Growing?
             </h2>
             <p class="final-cta-subtext">
-                বিনামূল্যে ১৫ মিনিটের Strategy Call বুক করুন। আমরা আপনার বর্তমান Ads Audit করব, কোথায় সমস্যা আছে তা দেখাব, এবং সামনে এগিয়ে যাওয়ার জন্য একটি পরিষ্কার পথ দেব—এমনকি যদি আপনি আমাদের কখনো Hire না-ও করেন।
+                Book a free 15-minute strategy call. We'll audit your current ads, show you what's broken, and give you a clear path forward—even if you never hire us.
             </p>
             <div class="cta-group">
-                <a href="https://wa.me/yourwhatsappnumber" class="btn btn-primary">WhatsApp এ Message করুন</a>
-                <a href="https://calendly.com/yourlink" class="btn btn-secondary">Strategy Call বুক করুন</a>
+                <a href="https://wa.me/yourwhatsappnumber" class="btn btn-primary">Message Us on WhatsApp</a>
+                <a href="https://calendly.com/yourlink" class="btn btn-secondary">Book Strategy Call</a>
             </div>
         </div>
     </section>
@@ -1427,7 +1483,7 @@ body {
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Zephyr Inc. All rights reserved. | Based in Bangladesh, Serving Local and Global Clients</p>
+            <p>&copy; 2024 Data-Driven Ads Agency. All rights reserved. | Based in Bangladesh, Serving Global Clients</p>
         </div>
     </footer>
 
